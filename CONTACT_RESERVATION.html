@@ -1,10 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CONTACT AND RESERVATION </title>
+    <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
     <style>
-        body {
-  width: 500px;
-  margin: 0 auto;
-  padding: 50px;
-}
+      form {
+        width: 1000px;
+        margin: 0 auto;
+        padding: 50px;
+      }
+
+h4{
+        margin: 0;
+        background-color: rgb(236, 229, 218);
+    }
 
 div.elem-group {
   margin: 20px 0;
@@ -61,53 +73,154 @@ button {
 button:hover {
   border: 2px solid black;
 }
+.hidden {
+            display: none;
+        }
+        .price-box {
+            font-size: 18px;
+            font-weight: bold;
+            color: green;
+            margin-top: 5px;
+        }
+
     </style>
 </head>
 <body>
+  <h4>eureuibfuebdifbsiu</h4>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="">Logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="BLOG_TRAVEL_TIPS.html">BLOG AND TRAVEL TIPS</a></li>
+          <li class="nav-item"><a class="nav-link" href="CONTACT_RESERVATION.html">CONTACT AND RESERVATION</a></li>
+          <li class="nav-item"><a class="nav-link" href="DISCOUNTS_PAGE.html">DISCOUNTS</a></li>
+          <li class="nav-item"><a class="nav-link" href="LOCATION_PAGE.html">LOCATION</a></li>
+          <li class="nav-item"><a class="nav-link" href="REVIEWS_PAGE.html">REVIEWS</a></li>
+          <li class="nav-item"><a class="nav-link" href="ROOMS_RATES_PAGE.html">ROOMS AND RATES</a></li>
+          <li class="nav-item"><a class="nav-link" href="SUPPORT_PAGE.html">SUPPORT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-4">
     <form action="reservation.php" method="post">
-  <div class="elem-group">
-    <label for="name">Your Name</label>
-    <input type="text" id="name" name="visitor_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} required>
+      <div class="mb-3">
+        <label for="name" class="form-label">Your Name</label>
+        <input type="text" class="form-control" id="name" name="visitor_name" placeholder="Your Name" pattern="[A-Z\sa-z]{3,20}" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Your E-mail</label>
+        <input type="email" class="form-control" id="email" name="visitor_email" placeholder="name@email.com" required>
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Your Phone</label>
+        <input type="tel" class="form-control" id="phone" name="visitor_phone" placeholder="498-348-3872" pattern="(\d{3})-?\s?(\d{3})-?\s?(\d{4})" required>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="adult" class="form-label">Adults</label>
+          <input type="number" class="form-control" id="adult" name="total_adults" placeholder="2" min="1" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="child" class="form-label">Children</label>
+          <input type="number" class="form-control" id="child" name="total_children" placeholder="2" min="0" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="checkin-date" class="form-label">Check-in Date</label>
+          <input type="date" class="form-control" id="checkin-date" name="checkin" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="checkout-date" class="form-label">Check-out Date</label>
+          <input type="date" class="form-control" id="checkout-date" name="checkout" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="room-selection" class="form-label">Select Room Preference</label>
+        <select class="form-select" id="room-selection" name="room_preference" required onchange="updatePriceList()">
+          <option value="">Choose a Room from the List</option>
+          <option value="aircon">Aircon</option>
+          <option value="ordinary">Ordinary</option>
+        </select>
+      </div>
+      <!-- Price Options List -->
+      <div id="price-options" class="mb-3 hidden">
+        <!-- Price list checkboxes will be injected here -->
+      </div>
+      <hr>
+      <div class="mb-3">
+        <label for="message" class="form-label">Anything Else?</label>
+        <textarea class="form-control" id="message" name="visitor_message" placeholder="Tell us anything else that might be important." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Book The Rooms</button>
+    </form>
   </div>
-  <div class="elem-group">
-    <label for="email">Your E-mail</label>
-    <input type="email" id="email" name="visitor_email" placeholder="name@email.com" required>
-  </div>
-  <div class="elem-group">
-    <label for="phone">Your Phone</label>
-    <input type="tel" id="phone" name="visitor_phone" placeholder="498-348-3872" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
-  </div>
-  <hr>
-  <div class="elem-group inlined">
-    <label for="adult">Adults</label>
-    <input type="number" id="adult" name="total_adults" placeholder="2" min="1" required>
-  </div>
-  <div class="elem-group inlined">
-    <label for="child">Children</label>
-    <input type="number" id="child" name="total_children" placeholder="2" min="0" required>
-  </div>
-  <div class="elem-group inlined">
-    <label for="checkin-date">Check-in Date</label>
-    <input type="date" id="checkin-date" name="checkin" required>
-  </div>
-  <div class="elem-group inlined">
-    <label for="checkout-date">Check-out Date</label>
-    <input type="date" id="checkout-date" name="checkout" required>
-  </div>
-  <div class="elem-group">
-    <label for="room-selection">Select Room Preference</label>
-    <select id="room-selection" name="room_preference" required>
-        <option value="">Choose a Room from the List</option>
-        <option value="connecting">Connecting</option>
-        <option value="adjoining">Adjoining</option>
-        <option value="adjacent">Adjacent</option>
-    </select>
-  </div>
-  <hr>
-  <div class="elem-group">
-    <label for="message">Anything Else?</label>
-    <textarea id="message" name="visitor_message" placeholder="Tell us anything else that might be important." required></textarea>
-  </div>
-  <button type="submit">Book The Rooms</button>
-</form>
+
+  <script>
+    function updatePriceList() {
+      const roomSelection = document.getElementById("room-selection").value;
+      const priceOptions = document.getElementById("price-options");
+
+      if (roomSelection === "aircon") {
+        priceOptions.innerHTML = `
+          <p>Select Duration for Aircon Room:</p>
+          <div class="price-option">
+            <input type="checkbox" id="aircon-3hrs" name="duration[]" value="350_3">
+            <label for="aircon-3hrs">350 - 3 HOURS</label>
+          </div>
+          <div class="price-option">
+            <input type="checkbox" id="aircon-6hrs" name="duration[]" value="500_6">
+            <label for="aircon-6hrs">500 - 6 HOURS</label>
+          </div>
+          <div class="price-option">
+            <input type="checkbox" id="aircon-12hrs" name="duration[]" value="700_12">
+            <label for="aircon-12hrs">700 - 12 HOURS</label>
+          </div>
+          <div class="price-option">
+            <input type="checkbox" id="aircon-24hrs" name="duration[]" value="1000_24">
+            <label for="aircon-24hrs">1000 - 24 HOURS</label>
+          </div>
+          <div class="price-option">
+            <input type="checkbox" id="aircon-overnight" name="duration[]" value="650_overnight">
+            <label for="aircon-overnight">OVERNIGHT (8PM - 6AM) - 650</label>
+          </div>
+        `;
+        priceOptions.classList.remove("hidden");
+      } else if (roomSelection === "ordinary") {
+        priceOptions.innerHTML = `
+          <p>Select Duration for Ordinary Room:</p>
+          <div class="price-option">
+            <input type="checkbox" id="ordinary-3hrs" name="duration[]" value="250_3">
+            <label for="ordinary-3hrs">250 - 3 HOURS</label>
+          </div>
+          <div class="price-option">
+            <input type="checkbox" id="ordinary-6hrs" name="duration[]" value="400_6">
+            <label for="ordinary-6hrs">400 - 6 HOURS</label>
+          </div>
+          <div class="price-option">
+            <input type="checkbox" id="ordinary-12hrs" name="duration[]" value="500_12">
+            <label for="ordinary-12hrs">500 - 12 HOURS</label>
+          </div>
+          <div class="price-option">
+            <input type="checkbox" id="ordinary-24hrs" name="duration[]" value="750_24">
+            <label for="ordinary-24hrs">750 - 24 HOURS</label>
+          </div>
+          <div class="price-option">
+            <input type="checkbox" id="ordinary-overnight" name="duration[]" value="450_overnight">
+            <label for="ordinary-overnight">OVERNIGHT (8PM - 6AM) - 450</label>
+          </div>
+        `;
+        priceOptions.classList.remove("hidden");
+      } else {
+        priceOptions.innerHTML = "";
+        priceOptions.classList.add("hidden");
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
