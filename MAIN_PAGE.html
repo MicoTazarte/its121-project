@@ -22,6 +22,35 @@
         margin-top:15px;
         margin-left:10px;
     }
+    .hero-section {
+            background: url('eto na talaga.png') no-repeat center center/cover;
+            height: 80vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .room {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .cta-buttons .btn {
+            margin: 10px;
+        }
     
 </style>
 </head>
@@ -46,6 +75,17 @@
         </div>
     </nav>
     
+    <header class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content text-center">
+            <h1 class="room">MJJQ Transient Room</h1>
+            <p>Family-owned home rental property.</p>
+            <div class="cta-buttons">
+                <a href="LOCATION_PAGE.html" class="btn btn-outline-light">Rates</a>
+                <a href="CONTACT_RESERVATION.html" class="btn btn-outline-light">Book Now</a>
+            </div>
+        </div>
+    </header>
 
     
 
