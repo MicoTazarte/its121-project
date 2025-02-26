@@ -12,23 +12,48 @@
         margin: 0;
         padding: 0;
     }
+
     h4{
         margin: 0;
         background-color: rgb(236, 229, 218);
     }
 
+    .carousel-inner img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+    .navbar .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        }
+
+    .dropdown-menu {
+        margin-top: 0;
+        }
+    
 </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-light navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="MAIN_PAGE.html"><img src="eto na talaga.png" style="width:50px;height: 50px;"></a>
+            <a class="navbar-brand" href="MAIN_PAGE.html">
+                <img src="eto na talaga.png" style="width:50px;height:50px;">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button> 
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="ROOMS_RATES_PAGE.html">Rooms & Rates</a></li>
+                    <!-- Rooms & Rates Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="page1test.html">Rooms & Rates</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="page2test.html">Standard Room</a></li>
+                            <li><a class="dropdown-item" href="page3test.html">Deluxe Room</a></li>
+                            <li><a class="dropdown-item" href="suite_room.html">Suite Room</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="CONTACT_RESERVATION.html">Contact & Reservation</a></li>
                     <li class="nav-item"><a class="nav-link" href="DISCOUNTS_PAGE.html">Special Offers & Discounts</a></li>
                     <li class="nav-item"><a class="nav-link" href="LOCATION_PAGE.html">Location</a></li>
@@ -39,6 +64,32 @@
             </div>
         </div>
     </nav>
+
+    <div id="hotelCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#hotelCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#hotelCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#hotelCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="hotel1.jpg" class="d-block w-100" alt="Hotel Exterior">
+            </div>
+            <div class="carousel-item">
+                <img src="hotel2.jpg" class="d-block w-100" alt="Hotel Lobby">
+            </div>
+            <div class="carousel-item">
+                <img src="hotel3.jpg" class="d-block w-100" alt="Hotel Room">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hotelCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hotelCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+    
     
 
     
