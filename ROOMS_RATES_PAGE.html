@@ -89,6 +89,30 @@
         border: 1px solid black;
         padding: 10px;
     }
+    .carousel-caption {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    .carousel-item.active .carousel-caption {
+        opacity: 1;
+    }
+    .carousel-caption h5, .carousel-caption p {
+        text-align: left;
+        color: white;
+        margin-left: 20px;
+    }
+    .carousel-caption a {
+        margin-right: 20px;
+    }
 
     </style>
 </head>
@@ -134,31 +158,45 @@
             <div class="carousel-item active">
                 <img src="room1/room1pic1.jpg" class="d-block w-100" alt="Room 1">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Luxury Suite</h5>
-                    <p>Experience elegance and comfort in our luxury suite.</p>
+                    <div>
+                        <h5>Luxury Suite</h5>
+                        <p>Experience elegance and comfort in our luxury suite.</p>
+                    </div>
+                    <a href="Room1.html" class="btn btn-primary">View Room</a>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="room2/room2pic7.jpg" class="d-block w-100" alt="Room 2">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Deluxe Room</h5>
-                    <p>Perfect for a cozy and relaxing stay.</p>
+                    <div>
+                        <h5>Deluxe Room</h5>
+                        <p>Perfect for a cozy and relaxing stay.</p>
+                    </div>
+                    <a href="Room2.html" class="btn btn-primary">View Room</a>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="room3/room3pic1.jpg" class="d-block w-100" alt="Room 3">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Family Room</h5>
-                    <p>Spacious and comfortable for the whole family.</p>
+                    <div>
+                        <h5>Family Room</h5>
+                        <p>Spacious and comfortable for the whole family.</p>
+                    </div>
+                    <a href="Room3.html" class="btn btn-primary">View Room</a>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="room4/room4pic4.jpeg" class="d-block w-100" alt="Room 4">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Budget Room</h5>
-                    <p>Affordable yet comfortable accommodation.</p>
+                    <div>
+                        <h5>Budget Room</h5>
+                        <p>Affordable yet comfortable accommodation.</p>
+                    </div>
+                    <a href="Room4.html" class="btn btn-primary">View Room</a>
                 </div>
             </div>
+            
+            
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
