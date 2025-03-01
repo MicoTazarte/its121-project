@@ -1,263 +1,374 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> MJJQ - Contact & Reservation </title>
-    <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
-    <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
-    <link rel="icon" type="image/x-icon" href="eto na talaga.png">
-    <style>
-      form {
-        width: 1000px;
-        margin: 0 auto;
-        padding: 50px;
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> MJJQ - Contact & Reservation </title>
+      <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
+      <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+      <link rel="icon" type="image/x-icon" href="eto na talaga.png">
+      <style>
+
+  form {
+      width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: 'Arial', sans-serif;
+  }
+
+  h4{
+          margin: 0;
+          background-color: rgb(236, 229, 218);
       }
 
-h4{
-        margin: 0;
-        background-color: rgb(236, 229, 218);
-    }
+  div.elem-group {
+    margin: 20px 0;
+  }
 
-div.elem-group {
-  margin: 20px 0;
-}
+  div.elem-group.inlined {
+    width: 49%;
+    display: inline-block;
+    float: left;
+    margin-left: 1%;
+  }
 
-div.elem-group.inlined {
-  width: 49%;
-  display: inline-block;
-  float: left;
-  margin-left: 1%;
-}
+  label {
+      font-weight: bold;
+      color: #8B6F3F; /* Brown color */
+      display: block;
+      margin-bottom: 5px;
+  }
 
-label {
-  display: block;
-  font-family: 'Nanum Gothic';
-  padding-bottom: 10px;
-  font-size: 1.25em;
-}
+  input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #8B6F3F; /* Brown border */
+      border-radius: 8px; /* Rounded edges */
+      font-size: 1rem;
+      box-sizing: border-box;
+      background: white;
+  }
 
-input, select, textarea {
-  border-radius: 2px;
-  border: 2px solid #777;
-  box-sizing: border-box;
-  font-size: 1.25em;
-  font-family: 'Nanum Gothic';
-  width: 100%;
-  padding: 10px;
-}
+  div.elem-group.inlined input {
+    width: 95%;
+    display: inline-block;
+  }
 
-div.elem-group.inlined input {
-  width: 95%;
-  display: inline-block;
-}
+  textarea {
+      height: 120px; /* Adjust height */
+  }
 
-textarea {
-  height: 250px;
-}
+  hr {
+    border: 1px dotted #ccc;
+  }
 
-hr {
-  border: 1px dotted #ccc;
-}
+  button {
+    height: 50px;
+    background: orange;
+    border: none;
+    color: white;
+    font-size: 1.25em;
+    font-family: 'Nanum Gothic';
+    border-radius: 4px;
+    cursor: pointer;
+  }
 
-button {
-  height: 50px;
-  background: orange;
-  border: none;
-  color: white;
-  font-size: 1.25em;
-  font-family: 'Nanum Gothic';
-  border-radius: 4px;
-  cursor: pointer;
-}
+  button:hover {
+    border: 2px solid black;
+  }
 
-button:hover {
-  border: 2px solid black;
-}
-.hidden {
-            display: none;
-        }
-        .price-box {
-            font-size: 18px;
-            font-weight: bold;
-            color: green;
-            margin-top: 5px;
-        }
-  .hero-image {
-    background-image: url('7.jpeg'); 
-    height: 500px; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; 
-    position: relative;
+  .hidden {
+              display: none;
+          }
+          .price-box {
+              font-size: 18px;
+              font-weight: bold;
+              color: green;
+              margin-top: 5px;
+          }
+          .hero-image {
+      position: relative;
+      background-image: url('7.jpeg'); 
+      height: 500px; 
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed; 
+  }
+
+  .hero-image::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
   }
 
   .hero-text {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 2em;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      font-size: 2em;
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 1;
   }
-  form {
-    border: 2px solid #000000;
-    border-radius: 10px; 
-    padding: 20px; 
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  .price-option {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    margin-bottom: 10px; 
+  }
+
+  .price-option input {
+    width: 18px;
+    height: 18px;
+  }
+  .get-in-touch {
+      display: block; 
+      width: fit-content; 
+      border: 2px solid #000; 
+      border-radius: 10px;
+      padding: 15px 30px; 
+      background-color: #f8f9fa; 
+      text-align: center;
+      margin: 20px auto; 
+  }
+  .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #8B6F3F;
+      border-radius: 8px;
+      background: white;
+      color: #8B6F3F;
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+  }
+
+  .submit-btn:hover {
+      background: #8B6F3F;
+      color: white;
+  }
+  .location-section {
+    text-align: center;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
 }
 
-    </style>
-</head>
-<body>
-  <nav class="navbar navbar-expand-sm bg-light navbar-light">
-    <div class="container-fluid">
-            <a class="navbar-brand" href="MAIN_PAGE.html"><img src="eto na talaga.png" style="width:50px;height:50px;"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="ROOMS_RATES_PAGE.html">Rooms & Rates</a></li>
-          <li class="nav-item"><a class="nav-link" href="CONTACT_RESERVATION.html">Contact & Reservation</a></li>
-          <li class="nav-item"><a class="nav-link" href="DISCOUNTS_PAGE.html">Special Offers & Discounts</a></li>
-          <li class="nav-item"><a class="nav-link" href="LOCATION_PAGE.html">Location</a></li>
-          <li class="nav-item"><a class="nav-link" href="BLOG_TRAVEL_TIPS.html">Blog & Travel Tips</a></li>
-          <li class="nav-item"><a class="nav-link" href="REVIEWS_PAGE.html">Reviews</a></li>
-          <li class="nav-item"><a class="nav-link" href="SUPPORT_PAGE.html">Support</a></li>
-        </ul>
+.location-title {
+    color: #8B6F3F;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.location-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.location-text {
+    flex: 1;
+    text-align: left;
+    font-size: 1rem;
+    color: #333;
+}
+
+.btn-directions {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8B6F3F;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.btn-directions:hover {
+    background-color: #6a4c2f;
+}
+
+.location-map {
+    flex: 1;
+    max-width: 400px;
+}
+
+      </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <div class="container-fluid">
+              <a class="navbar-brand" href="MAIN_PAGE.html"><img src="eto na talaga.png" style="width:50px;height:50px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="ROOMS_RATES_PAGE.html">Rooms & Rates</a></li>
+            <li class="nav-item"><a class="nav-link" href="CONTACT_RESERVATION.html">Contact & Reservation</a></li>
+            <li class="nav-item"><a class="nav-link" href="DISCOUNTS_PAGE.html">Special Offers & Discounts</a></li>
+            <li class="nav-item"><a class="nav-link" href="LOCATION_PAGE.html">Location</a></li>
+            <li class="nav-item"><a class="nav-link" href="BLOG_TRAVEL_TIPS.html">Blog & Travel Tips</a></li>
+            <li class="nav-item"><a class="nav-link" href="REVIEWS_PAGE.html">Reviews</a></li>
+            <li class="nav-item"><a class="nav-link" href="SUPPORT_PAGE.html">Support</a></li>
+          </ul>
+        </div>
       </div>
+    </nav>
+
+    <div class="hero-image">
+      <div class="hero-text">
+        <h1>Contact Us</h1>
+        <p>Book Your Stay with Comfort and Convenience</p>
+      </div>
+
     </div>
-  </nav>
-
-  <div class="hero-image">
-    <div class="hero-text">
-      <h1>Contact Us</h1>
-      <p>Book Your Stay with Comfort and Convenience</p>
+    <div class="text-center my-4 get-in-touch">
+      <h2>Get in Touch</h2>
+      <p><strong>📞 Call us:</strong> 0918 264 5515</p>
+      <p>📘 <strong>Facebook:</strong> <a href="https://www.facebook.com/p/MJJQ-Transient-Room-61555884395588/" target="_blank">MJJQ Transient Room</a></p>
+      <br>
+  </div>
+    <div class="container my-4">
+      <h2><center>Reservation</center></h2>
+      <form action="reservation.php" method="post">
+        <div class="mb-3">
+          <label for="name" class="form-label">Your Name</label>
+          <input type="text" class="form-control" id="name" name="visitor_name" placeholder="Your Name" pattern="[A-Z\sa-z]{3,20}" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Your E-mail</label>
+          <input type="email" class="form-control" id="email" name="visitor_email" placeholder="name@email.com" required>
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Your Phone</label>
+          <input type="tel" class="form-control" id="phone" name="visitor_phone" placeholder="498-348-3872" pattern="(\d{3})-?\s?(\d{3})-?\s?(\d{4})" required>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="adult" class="form-label">Adults</label>
+            <input type="number" class="form-control" id="adult" name="total_adults" placeholder="2" min="1" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="child" class="form-label">Children</label>
+            <input type="number" class="form-control" id="child" name="total_children" placeholder="2" min="0" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="checkin-date" class="form-label">Check-in Date</label>
+            <input type="date" class="form-control" id="checkin-date" name="checkin" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="checkout-date" class="form-label">Check-out Date</label>
+            <input type="date" class="form-control" id="checkout-date" name="checkout" required>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="room-selection" class="form-label">Select Room Preference</label>
+          <select class="form-select" id="room-selection" name="room_preference" required onchange="updatePriceList()">
+            <option value="">Choose a Room from the List</option>
+            <option value="aircon">Aircon</option>
+            <option value="ordinary">Ordinary</option>
+          </select>
+        </div>
+        <div id="price-options" class="mb-3 hidden">
+        </div>
+        <hr>
+        <div class="mb-3">
+          <label for="message" class="form-label">Anything Else?</label>
+          <textarea class="form-control" id="message" name="visitor_message" placeholder="Tell us anything else that might be important." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Book The Rooms</button>
+      </form>
     </div>
-
+    <div class="location-section">
+      <h2 class="location-title">Our Location</h2>
+      <div class="location-container">
+          <div class="location-text">
+              <p>
+                  MJJQ Transient Room is located in a prime area, providing easy access to key locations and sites. 
+                  Whether you're visiting for business or leisure, our location ensures convenience and comfort. 
+                  We are just a short distance from major landmarks and transportation hubs.
+              </p>
+              <a href="https://maps.app.goo.gl/Hgs3pqFhzBiHevbe8" target="_blank" class="btn-directions">GET DIRECTIONS</a>
+          </div>
+          <div class="location-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d265332.06914359564!2d121.02127083314147!3d15.463316224577834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33972fdbef8258bd%3A0x738c4bf33c1f9dea!2sMJJQ%20Transient%20Room!5e1!3m2!1sen!2sph!4v1740841163648!5m2!1sen!2sph" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+      </div>
   </div>
-  <div class="text-center my-4">
-    <h2>Get in Touch</h2>
-    <p><strong>📞 Call us:</strong> 0918 264 5515</p>
-    <p>📘 <strong>Facebook:</strong> <a href="https://www.facebook.com/p/MJJQ-Transient-Room-61555884395588/" target="_blank">MJJQ Transient Room</a></p>
-</div>
-  <div class="container my-4">
-    <form action="reservation.php" method="post">
-      <div class="mb-3">
-        <label for="name" class="form-label">Your Name</label>
-        <input type="text" class="form-control" id="name" name="visitor_name" placeholder="Your Name" pattern="[A-Z\sa-z]{3,20}" required>
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Your E-mail</label>
-        <input type="email" class="form-control" id="email" name="visitor_email" placeholder="name@email.com" required>
-      </div>
-      <div class="mb-3">
-        <label for="phone" class="form-label">Your Phone</label>
-        <input type="tel" class="form-control" id="phone" name="visitor_phone" placeholder="498-348-3872" pattern="(\d{3})-?\s?(\d{3})-?\s?(\d{4})" required>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-md-4 mb-3">
-          <label for="adult" class="form-label">Adults</label>
-          <input type="number" class="form-control" id="adult" name="total_adults" placeholder="2" min="1" required>
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="child" class="form-label">Children</label>
-          <input type="number" class="form-control" id="child" name="total_children" placeholder="2" min="0" required>
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="checkin-date" class="form-label">Check-in Date</label>
-          <input type="date" class="form-control" id="checkin-date" name="checkin" required>
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="checkout-date" class="form-label">Check-out Date</label>
-          <input type="date" class="form-control" id="checkout-date" name="checkout" required>
-        </div>
-      </div>
-      <div class="mb-3">
-        <label for="room-selection" class="form-label">Select Room Preference</label>
-        <select class="form-select" id="room-selection" name="room_preference" required onchange="updatePriceList()">
-          <option value="">Choose a Room from the List</option>
-          <option value="aircon">Aircon</option>
-          <option value="ordinary">Ordinary</option>
-        </select>
-      </div>
-      <div id="price-options" class="mb-3 hidden">
-      </div>
-      <hr>
-      <div class="mb-3">
-        <label for="message" class="form-label">Anything Else?</label>
-        <textarea class="form-control" id="message" name="visitor_message" placeholder="Tell us anything else that might be important." required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Book The Rooms</button>
-    </form>
-  </div>
+    <script>
+          function updatePriceList() {
+        const roomSelection = document.getElementById("room-selection").value;
+        const priceOptions = document.getElementById("price-options");
 
-  <script>
-    function updatePriceList() {
-      const roomSelection = document.getElementById("room-selection").value;
-      const priceOptions = document.getElementById("price-options");
-
-      if (roomSelection === "aircon") {
-        priceOptions.innerHTML = `
-          <p>Select Duration for Aircon Room:</p>
-          <div class="price-option">
-            <input type="checkbox" id="aircon-3hrs" name="duration[]" value="350_3">
-            <label for="aircon-3hrs">350 - 3 HOURS</label>
-          </div>
-          <div class="price-option">
-            <input type="checkbox" id="aircon-6hrs" name="duration[]" value="500_6">
-            <label for="aircon-6hrs">500 - 6 HOURS</label>
-          </div>
-          <div class="price-option">
-            <input type="checkbox" id="aircon-12hrs" name="duration[]" value="700_12">
-            <label for="aircon-12hrs">700 - 12 HOURS</label>
-          </div>
-          <div class="price-option">
-            <input type="checkbox" id="aircon-24hrs" name="duration[]" value="1000_24">
-            <label for="aircon-24hrs">1000 - 24 HOURS</label>
-          </div>
-          <div class="price-option">
-            <input type="checkbox" id="aircon-overnight" name="duration[]" value="650_overnight">
-            <label for="aircon-overnight">OVERNIGHT (8PM - 6AM) - 650</label>
-          </div>
-        `;
-        priceOptions.classList.remove("hidden");
-      } else if (roomSelection === "ordinary") {
-        priceOptions.innerHTML = `
-          <p>Select Duration for Ordinary Room:</p>
-          <div class="price-option">
-            <input type="checkbox" id="ordinary-3hrs" name="duration[]" value="250_3">
-            <label for="ordinary-3hrs">250 - 3 HOURS</label>
-          </div>
-          <div class="price-option">
-            <input type="checkbox" id="ordinary-6hrs" name="duration[]" value="400_6">
-            <label for="ordinary-6hrs">400 - 6 HOURS</label>
-          </div>
-          <div class="price-option">
-            <input type="checkbox" id="ordinary-12hrs" name="duration[]" value="500_12">
-            <label for="ordinary-12hrs">500 - 12 HOURS</label>
-          </div>
-          <div class="price-option">
-            <input type="checkbox" id="ordinary-24hrs" name="duration[]" value="750_24">
-            <label for="ordinary-24hrs">750 - 24 HOURS</label>
-          </div>
-          <div class="price-option">
-            <input type="checkbox" id="ordinary-overnight" name="duration[]" value="450_overnight">
-            <label for="ordinary-overnight">OVERNIGHT (8PM - 6AM) - 450</label>
-          </div>
-        `;
-        priceOptions.classList.remove("hidden");
-      } else {
-        priceOptions.innerHTML = "";
-        priceOptions.classList.add("hidden");
+        if (roomSelection === "aircon") {
+          priceOptions.innerHTML = `
+            <p>Select Duration for Aircon Room:</p>
+            <div class="price-option">
+              <input type="radio" id="aircon-3hrs" name="duration" value="350_3" required>
+              <label for="aircon-3hrs">350 - 3 HOURS</label>
+            </div>
+            <div class="price-option">
+              <input type="radio" id="aircon-6hrs" name="duration" value="500_6">
+              <label for="aircon-6hrs">500 - 6 HOURS</label>
+            </div>
+            <div class="price-option">
+              <input type="radio" id="aircon-12hrs" name="duration" value="700_12">
+              <label for="aircon-12hrs">700 - 12 HOURS</label>
+            </div>
+            <div class="price-option">
+              <input type="radio" id="aircon-24hrs" name="duration" value="1000_24">
+              <label for="aircon-24hrs">1000 - 24 HOURS</label>
+            </div>
+            <div class="price-option">
+              <input type="radio" id="aircon-overnight" name="duration" value="650_overnight">
+              <label for="aircon-overnight">OVERNIGHT (8PM - 6AM) - 650</label>
+            </div>
+          `;
+          priceOptions.classList.remove("hidden");
+        } else if (roomSelection === "ordinary") {
+          priceOptions.innerHTML = `
+            <p>Select Duration for Ordinary Room:</p>
+            <div class="price-option">
+              <input type="radio" id="ordinary-3hrs" name="duration" value="250_3" required>
+              <label for="ordinary-3hrs">250 - 3 HOURS</label>
+            </div>
+            <div class="price-option">
+              <input type="radio" id="ordinary-6hrs" name="duration" value="400_6">
+              <label for="ordinary-6hrs">400 - 6 HOURS</label>
+            </div>
+            <div class="price-option">
+              <input type="radio" id="ordinary-12hrs" name="duration" value="500_12">
+              <label for="ordinary-12hrs">500 - 12 HOURS</label>
+            </div>
+            <div class="price-option">
+              <input type="radio" id="ordinary-24hrs" name="duration" value="750_24">
+              <label for="ordinary-24hrs">750 - 24 HOURS</label>
+            </div>
+            <div class="price-option">
+              <input type="radio" id="ordinary-overnight" name="duration" value="450_overnight">
+              <label for="ordinary-overnight">OVERNIGHT (8PM - 6AM) - 450</label>
+            </div>
+          `;
+          priceOptions.classList.remove("hidden");
+        } else {
+          priceOptions.innerHTML = "";
+          priceOptions.classList.add("hidden");
+        }
       }
-    }
-  </script>
-</body>
+    </script>
+  </body>
