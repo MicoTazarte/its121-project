@@ -8,9 +8,39 @@
       <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
       <link rel="icon" type="image/x-icon" href="eto na talaga.png">
       <style>
+.contact-section {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    color: #333;
+    margin: 30px auto;
+    max-width: 600px;
+}
 
+.contact-section p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.contact-section strong {
+    color: #8B6F3F; /* Brown color for emphasis */
+}
+
+.contact-section em {
+    font-style: italic;
+}
+
+.contact-section a {
+    color: #8B6F3F;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+}
   form {
-      width: 600px;
+      width: 900px;
       margin: 0 auto;
       padding: 20px;
       font-family: 'Arial', sans-serif;
@@ -41,6 +71,7 @@
 
   input, select, textarea {
       width: 100%;
+      height: 55px;
       padding: 10px;
       border: 2px solid #8B6F3F; /* Brown border */
       border-radius: 8px; /* Rounded edges */
@@ -205,6 +236,20 @@
     flex: 1;
     max-width: 400px;
 }
+.contact-section h1 {
+    color: #8B6F3F;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.styled-title {
+    color: #8B6F3F;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
       </style>
   </head>
@@ -236,14 +281,20 @@
       </div>
 
     </div>
-    <div class="text-center my-4 get-in-touch">
-      <h2>Get in Touch</h2>
-      <p><strong>📞 Call us:</strong> 0918 264 5515</p>
-      <p>📘 <strong>Facebook:</strong> <a href="https://www.facebook.com/p/MJJQ-Transient-Room-61555884395588/" target="_blank">MJJQ Transient Room</a></p>
+    <div class="contact-section">
+      <h1>Contact Us</h1>
+      <p>Get in touch with us to find out more about MJJQ Transient Room.</p>
+      <p>You may also fill out the form below and we will get back to you as soon as we can.</p>
+  
+      <p><strong>ADDRESS:</strong> Barangay Militar<br>
+      <em>Fort Magsaysay, Palayan City,</em><br>
+      <em>Philippines</em></p>
+  
+      <p><strong>PHONE:</strong> 0918-264-5515 / 0927-820-3278</p>
       <br>
   </div>
     <div class="container my-4">
-      <h2><center>Reservation</center></h2>
+      <h2 class="styled-title">Reservation</h2>
       <form action="reservation.php" method="post">
         <div class="mb-3">
           <label for="name" class="form-label">Your Name</label>
