@@ -8,87 +8,260 @@
     <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="navbar.css"> 
     <style>
-        h4{
-            margin: 0;
-            background-color: rgb(236, 229, 218);
-        }
+h4 {
+    margin: 0;
+    background-color: rgb(236, 229, 218);
+}
 
-        .carousel-inner img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-        }
+.carousel-inner img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
 
-        /* Initial state of the text (invisible) */
-        .carousel-caption {
-            position: absolute;
-            top: 50%;
-            left: 10%; /* Moves text to the left */
-            transform: translateY(-50%); /* Keeps text vertically centered */
-            text-align: left; /* Align text to the left */
-            color: white; /* Ensures readability */
-            opacity: 0; /* Initially hidden */
-            transition: opacity 1s ease-in-out; /* Smooth fade effect */
-        }
+/* Initial state of the text (invisible) */
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 10%; /* Moves text to the left */
+    transform: translateY(-50%); /* Keeps text vertically centered */
+    text-align: left; /* Align text to the left */
+    color: white; /* Ensures readability */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease-in-out; /* Smooth fade effect */
+}
 
-        /* Add an effect to fade in text */
-        .carousel-item-next .carousel-caption,
-        .carousel-item-prev .carousel-caption {
-            opacity: 0;
-        }
+/* Add an effect to fade in text */
+.carousel-item-next .carousel-caption,
+.carousel-item-prev .carousel-caption {
+    opacity: 0;
+}
 
-        .carousel-item.active .carousel-caption {
-            opacity: 1; /* Fades in when active */
-        }
-        .amenities-section, .rates-section {
-        text-align: center;
-        padding: 30px 20px;
-    }
+.carousel-item.active .carousel-caption {
+    opacity: 1; /* Fades in when active */
+}
 
-    .amenities-section h2, .rates-section h2 {
-        font-weight: bold;
-    }
+.amenities-section, .rates-section {
+    text-align: center;
+    padding: 30px 20px;
+    max-width: 800px; /* Prevents section from stretching too wide */
+    margin: 0 auto; /* Centers the section */
+}
 
-    .amenities-section p, .rates-section p {
-        font-style: italic;
-        color: green;
-    }
+.amenities-section h2, .rates-section h2 {
+    font-weight: bold;
+    font-size: 1.8rem; /* Reduced font size */
+}
 
-    .amenities-icons, .rates-table {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-        margin-top: 20px;
-    }
+.amenities-section p, .rates-section p {
+    font-style: italic;
+    color: green;
+}
 
-    .amenity, .rate {
-        text-align: center;
-        width: 150px;
-    }
+.amenities-icons, .rates-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
 
-    .amenity img {
-        width: 50px;
-        height: 50px;
-    }
+.amenity, .rate {
+    text-align: center;
+    width: 150px;
+}
 
-    .rates-table {
-        width: 80%;
-        margin: 0 auto;
-        border-collapse: collapse;
-    }
+.amenity img {
+    width: 40px; /* Reduced size */
+    height: 40px;
+    object-fit: contain; /* Prevents distortion */
+}
 
-    .rates-table th, .rates-table td {
-        border: 1px solid black;
-        padding: 10px;
-    }
-    .carousel-caption h5 {
-        font-size: 2.5rem; /* Increased text size */
-        font-weight: bold;
-    }
-    .carousel-caption p {
-        font-size: 1.5rem;
-    }
+.rates-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.rates-table th, .rates-table td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.carousel-caption h5 {
+    font-size: 2.5rem; /* Increased text size */
+    font-weight: bold;
+}
+
+.carousel-caption p {
+    font-size: 1.5rem;
+}
+
+/* Room Container Styles */
+.room-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    background-color: #a39688;
+}
+
+.room-details {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background-color:aliceblue;
+    padding: 20px;
+}
+
+.room-details h2 {
+    font-size: 1.8rem;
+}
+
+.room-details ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.room-details ul li {
+    margin: 5px 0;
+}
+
+.room-details .check-availability {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.room-details .check-availability:hover {
+    background-color: #45a049;
+}
+
+.room-images {
+    flex: 1;
+    text-align: center;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.room-images img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.thumbnail-images {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.thumbnail-images img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-more {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #4CAF50;
+}
+.superior-b-container {
+    display: flex;
+    flex-direction: column;
+    background: #f5f5f5;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.superior-b-room {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1100px; /* Match width of Superior A */
+    margin: 0 auto; /* Center align */
+}
+
+.superior-b-image {
+    flex: 1;
+    max-width: 400px;
+}
+
+.superior-b-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.superior-b-details {
+    flex: 2;
+    padding: 20px;
+    min-width: 300px;
+    max-width: 500px;
+    background-color:  #a39688;
+    margin-left: 350px;
+}
+
+.superior-b-details h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.superior-b-occupancy {
+    color: green;
+    font-weight: bold;
+}
+
+.superior-b-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.superior-b-features li {
+    width: 48%;
+}
+
+.superior-b-btn {
+    display: inline-block;
+    background: green;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.superior-b-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    max-width: 1100px;
+    margin: 20px auto;
+}
+
+.superior-b-gallery img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+
 
     </style>
 </head>
@@ -209,6 +382,132 @@
             </div>
         </div>
     </section>
+    <div class="room-container">
+        <div class="room-details">
+            <h2>SUPERIOR A</h2>
+            <p class="max-occupancy">Max Occupancy: 4</p>
+            <p>All Superior A rooms are 21 sqm (226 sqft) with balcony that can comfortably accommodate 2 adults...</p>
+            <ul>
+                <li>220-240 volt circuits</li>
+                <li>Air-conditioning</li>
+                <li>Microwave</li>
+                <li>Water Kettle</li>
+                <li>Private Toilet and Shower</li>
+            </ul>
+            <button class="check-availability">CHECK AVAILABILITY</button>
+        </div>
+        <div class="room-images">
+            <img src="main_room_image.jpg" alt="Superior A Room" class="main-image">
+            <div class="thumbnail-images">
+                <img src="thumbnail1.jpg" alt="Thumbnail 1">
+                <img src="thumbnail2.jpg" alt="Thumbnail 2">
+                <img src="thumbnail3.jpg" alt="Thumbnail 3">
+                <img src="thumbnail4.jpg" alt="Thumbnail 4">
+            </div>
+            <a href="#" class="view-more">View more</a>
+        </div>
+    </div>
+</section>
+<section class="superior-b-container">
+    <div class="superior-b-room">
+        <div class="superior-b-image">
+            <img src="superior-b-main.jpg" alt="Superior B Room">
+        </div>
+        <div class="superior-b-details">
+            <h2>SUPERIOR B</h2>
+            <p class="superior-b-occupancy"><em>Max Occupancy: 3</em></p>
+            <p>
+                All Superior B rooms are 13 sqm (140 sqft) with a balcony that can comfortably accommodate 2 adults, with free high-speed WiFi, air conditioning, private bath and shower, full pantry (incl. microwave, fridge, and kettle), SmartTV and MXQ box, and more. Enjoy watching Netflix, Youtube, etc. in the privacy of your own room. We regularly disinfect the rooms by fogging and using disinfecting detergents.
+            </p>
+            <ul class="superior-b-features">
+                <li>220–240 volt circuits</li>
+                <li>Air-conditioning</li>
+                <li>Microwave</li>
+                <li>Water Kettle</li>
+                <li>Pantry – cutlery, cups, and plates</li>
+                <li>Private Toilet and Shower</li>
+                <li>Slippers</li>
+                <li>Ceiling fan</li>
+                <li>Wireless internet (WiFi)</li>
+                <li>Hot and Cold Shower</li>
+                <li>Personal Fridge</li>
+                <li>SmartTV and MXQ box</li>
+            </ul>
+            <a href="#" class="superior-b-btn">CHECK AVAILABILITY</a>
+        </div>
+    </div>
+    <div class="superior-b-gallery">
+        <img src="superior-b-1.jpg" alt="Superior B Room 1">
+        <img src="superior-b-2.jpg" alt="Superior B Room 2">
+        <img src="superior-b-3.jpg" alt="Superior B Room 3">
+        <img src="superior-b-4.jpg" alt="Superior B Room 4">
+    </div>
+</section>
+</section>
+<div class="room-container">
+    <div class="room-details">
+        <h2>SUPERIOR A</h2>
+        <p class="max-occupancy">Max Occupancy: 4</p>
+        <p>All Superior A rooms are 21 sqm (226 sqft) with balcony that can comfortably accommodate 2 adults...</p>
+        <ul>
+            <li>220-240 volt circuits</li>
+            <li>Air-conditioning</li>
+            <li>Microwave</li>
+            <li>Water Kettle</li>
+            <li>Private Toilet and Shower</li>
+        </ul>
+        <button class="check-availability">CHECK AVAILABILITY</button>
+    </div>
+    <div class="room-images">
+        <img src="main_room_image.jpg" alt="Superior A Room" class="main-image">
+        <div class="thumbnail-images">
+            <img src="thumbnail1.jpg" alt="Thumbnail 1">
+            <img src="thumbnail2.jpg" alt="Thumbnail 2">
+            <img src="thumbnail3.jpg" alt="Thumbnail 3">
+            <img src="thumbnail4.jpg" alt="Thumbnail 4">
+        </div>
+        <a href="#" class="view-more">View more</a>
+    </div>
+</div>
+</section>
+<section class="superior-b-container">
+    <div class="superior-b-room">
+        <div class="superior-b-image">
+            <img src="superior-b-main.jpg" alt="Superior B Room">
+        </div>
+        <div class="superior-b-details">
+            <h2>SUPERIOR B</h2>
+            <p class="superior-b-occupancy"><em>Max Occupancy: 3</em></p>
+            <p>
+                All Superior B rooms are 13 sqm (140 sqft) with a balcony that can comfortably accommodate 2 adults, with free high-speed WiFi, air conditioning, private bath and shower, full pantry (incl. microwave, fridge, and kettle), SmartTV and MXQ box, and more. Enjoy watching Netflix, Youtube, etc. in the privacy of your own room. We regularly disinfect the rooms by fogging and using disinfecting detergents.
+            </p>
+            <ul class="superior-b-features">
+                <li>220–240 volt circuits</li>
+                <li>Air-conditioning</li>
+                <li>Microwave</li>
+                <li>Water Kettle</li>
+                <li>Pantry – cutlery, cups, and plates</li>
+                <li>Private Toilet and Shower</li>
+                <li>Slippers</li>
+                <li>Ceiling fan</li>
+                <li>Wireless internet (WiFi)</li>
+                <li>Hot and Cold Shower</li>
+                <li>Personal Fridge</li>
+                <li>SmartTV and MXQ box</li>
+            </ul>
+            <a href="#" class="superior-b-btn">CHECK AVAILABILITY</a>
+        </div>
+    </div>
+    <div class="superior-b-gallery">
+        <img src="superior-b-1.jpg" alt="Superior B Room 1">
+        <img src="superior-b-2.jpg" alt="Superior B Room 2">
+        <img src="superior-b-3.jpg" alt="Superior B Room 3">
+        <img src="superior-b-4.jpg" alt="Superior B Room 4">
+    </div>
+</section>
+</section>
+
+
 
     <section class="rates-section">
         <h2>ROOM RATES</h2>
