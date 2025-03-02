@@ -32,6 +32,10 @@ body {
   height: auto;
 }
 
+.logo {
+  flex-shrink: 0; /* Prevents logo from resizing */
+}
+
 .navbar {
   position: sticky;
   top: 0;
@@ -68,27 +72,12 @@ body {
   padding: 0;
 }
 
-.nav-container {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
 .logo img {
   position: absolute;
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  margin-right: 25px;
-  padding: 0;
 }
 
 .nav-links li {
@@ -174,7 +163,7 @@ body {
     flex-direction: column;
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 100px;
     background: white;
     width: 100%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
