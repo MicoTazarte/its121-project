@@ -164,9 +164,9 @@ body {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 100%;
+    top: 54px; /* Adjusted to match navbar height */
     left: 0;
-    background: white;
+    background:#ffffff;
     width: 100%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
