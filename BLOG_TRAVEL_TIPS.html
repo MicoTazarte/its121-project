@@ -8,18 +8,41 @@
     <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
     <link rel="icon" type="image/x-icon" href="eto na talaga.png">
 <style>
-    body{
+    body {
         margin: 0;
         padding: 0;
         background-color: antiquewhite;
     }
-    h4{
+    h4 {
         margin: 0;
         background-color: rgb(236, 229, 218);
+    }   
+    img {
+        padding: 5px;
+        width: 150px;
     }
-    div.container {
-        align-items: center;
+    .polaroid {
+        width: 80%;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom: 25px;
+        transition: transform 0.3s ease-in-out;
     }
+    .polaroid:hover {
+        transform: scale(1.05);
+    }
+
+
+    .container {
+        text-align: center;
+        padding: 10px 20px;
+    }
+    .caption {
+        padding: 15px;
+        text-align: center;
+    }
+
+                
 </style>
 </head>
 <body>
@@ -45,19 +68,59 @@
 
     
     <br>
-    <div class="container">
-        <h2>Hidden Gems Await – Explore Beyond the Stay!</h2>
-    </div>
-
-    <div class="container"
-            <p id="rcorners2">Just because you're in the province doesn’t mean adventure 
-                is far away! Discover breathtaking landscapes, cultural landmarks,
-                and hidden local gems just minutes from your stay. Whether it's 
-                serene nature spots, historic sites, or vibrant local markets, 
-                there's always something new to explore. Let your journey begin 
-                right at our doorstep! </p>
-    </div>
+    <h2 style="text-align:center;font-family: Arial"><b>Hidden Gems Await – Explore Beyond the Stay!</b></h2>
     <br>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="polaroid">
+              <a href="minalungao.jpg" target="_blank">
+                <img src="minalungao.jpg" alt="minalungao" style="width:100%"></a>
+                <div class="caption">
+                  <h6>Minalungao National Park</h6>
+                  <p>is a protected area of the Philippines located in the municipality
+                    of General Tinio, Nueva Ecija, near its Boundary with Doña Remedios
+                    Trinidad, Bulacan. The park covers an area of 2,018 hectares 
+                    centered along the scenic Peñaranda River bordered on both sides 
+                    by up to 16-meter high limestone walls in the foothills of the
+                    Sierra Madre mountain range.</p>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="polaroid">
+              <a href="fort magsaysay base.jpg" target="_blank">
+                <img src="fort magsaysay base.jpg" alt="fort magsaysay" style="width:100%"></a>
+                <div class="caption">
+                  <h6>Fort Ramon Magsaysay Military Camp</h6>
+                  <p>is the largest military reservation in the Philippines,
+                    and is a key training area of the Armed Forces of the Philippines. 
+                    Fort Magsaysay straddles the provinces of Nueva Ecija and Aurora, 
+                    encompassing Palayan City, Sta. Rosa, Gen. Tinio, Laur, and Dingalan.</p>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="polaroid">
+              <a href="pahingahan dam.jpg" target="_blank">
+                <img src="pahingahan dam.jpg" alt="pahingahan dam" style="width:100%"></a>
+                <div class="caption">
+                  <h6>Pahingahan Dam</h6>
+                  <p>This man made water reservoir located inside the Fort Magsaysay, 
+                    serves as the relaxation place of our soldiers from the pressure 
+                    in their line of work.
+                    They say that by staring at any body of water can relax your body
+                    and mind. So it’s very effective to relax here.
+                    Another thing, If there is reservoir there is falls. 
+                    Who wouldn’t want to go to the falls right? Go for a swim 
+                    and jump from it’s peak to the lagoon.</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
         
 
     
