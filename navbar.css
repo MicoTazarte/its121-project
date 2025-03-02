@@ -160,7 +160,7 @@ body {
       display: none;
       flex-direction: column;
       position: absolute; /* Keep it absolute */
-      top: 54px; /* Position it relative to the navbar */
+      top: 65px; /* Position it relative to the navbar */
       left: 0;
       background: #ffffff;
       width: 100%;
