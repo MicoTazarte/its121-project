@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MJJQ Transient Room</title>
+  <style>
+    /* Reset margin/padding */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 0;
+      font-size: 14px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .top-bar .contact-info a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    /* Navbar Wrapper */
+    .navbar-wrapper {
+      height: 60px;
+    }
+
+    .logo img {
+      width: 150px;
+      height: auto;
+      
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1001;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 10px 20px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Specific transitions */
+    }
+
+    .navbar.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Updated box-shadow */
+      transform: translateY(0); /* Ensure smooth transition */
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 50px;
+    }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin-left: auto; /* Ensures alignment to the right */
+  padding: 0;
+}
+
+
+    .navbar.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+
+    /* Navbar Container */
+    .nav-container {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Logo */
+    .logo img {
+      position: absolute;
+      left: 10px; /* Adjust as needed */
+      top: 50%;
+      transform: translateY(-50%); 
+    }
+
+    /* Navigation Links */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      margin-right: 25px;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin-left: 15px;
+      position: relative;
+    }
+
+    .nav-links li a {
+      font-size: 14px;
+      text-decoration: none;
+      color: #000;
+      padding: 8px 12px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #a39688;
+    }
+
+    /* Dropdown Menu */
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      width: 200px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+    }
+
+    .nav-links li:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: black;
+      transition: background 0.3s;
+    }
+
+    .dropdown a:hover {
+      background: #a39688;
+    }
+
+    .nav-links li a.book-now {
+      background-color: #a39688;
+      color: #000;
+      padding: 8px 14px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links li a.book-now:hover {
+      background-color:#a39688;
+    }
+
+    /* Mobile Menu */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      padding: 5px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 990px) {
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 45px;
+        top: 12px;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        margin-left: 0; /* Reset margin-left */
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        text-align: left;
+        padding: 10px 0;
+      }
+
+      .nav-links li a {
+        display: block;
+        width: 100%;
+      }
+
+      /* Full-width dropdown */
+      .dropdown {
+        position: static;
+        width: 100%;
+      }
+    }
+
+    /* Hero Section */
+    .content {
+      padding-top: 0px;
+    }
+
+    .hero {
+      height: 600px;
+      background: url('background 1.jpg') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      z-index: 999;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 90%;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="contact-info">
+      <a href="tel:+63277557888">+63 2 77557888</a>
+      <a href="mailto:reservations@imhotel.com">reservations@imhotel.com</a>
+    </div>
+  </div>
+
+  <div class="navbar-wrapper">
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <img src="logo.png" alt="MJJQ Logo">
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul class="nav-links">
+          <li><a href="#">About Us</a></li>
+          <li>
+            <a href="https://yourlink.com">Rooms & Rates</a> <div class="dropdown"> <a href="#">Room 1</a>
+              <a href="#">Room 2</a>
+              <a href="#">Room 3</a>
+              <a href="#">Room 4</a>
+            </div>
+          </li>
+          <li><a href="#">Location</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Offers</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#" class="book-now">BOOK NOW</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="content">
+    <div class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="room">MJJQ Transient Room</h1>
+        <p>Family-owned home rental property.</p>
+      </div>
+    </div>
+  </div>
+  
+
+ <!-- Footer -->
+<footer style="background-color: #000; color: #fff; padding: 30px; padding-top: 35px; padding-bottom: 5px;">
+  <!-- Wrapper for positioning control -->
+  <div style="position: relative; top: -30px;"> <!-- Move the content upwards by -50px -->
+    
+    <!-- Flex container holding the content -->
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; text-align: center;">
+    
+      <!-- Logo & Tagline -->
+      <div style="flex: 1; min-width: 250px;">
+        <img src="logo.png" alt="MJJQ Logo" style="max-width: 120px;">
+        <p style="margin-top: 10px;">Your Home Away From Home</p>
+      </div>
+
+      <!-- Location -->
+      <div style="flex: 1; min-width: 250px;">
+        <h3 style="font-size: 18px; margin-bottom: 10px;">LOCATION</h3>
+        <p>P37-12 11th & 16th Street <br> Pasay - Manila, 1309</p>
+        <div>
+          <a href="#" style="margin-right: 10px;"><img src="2-removebg-preview.png" alt="Email" width="24"></a>
+          <a href="#" style="margin-right: 10px;"><img src="facebook-icon.png" alt="Facebook" width="24"></a>
+          <a href="#"><img src="google-icon.png" alt="Google" width="24"></a>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div style="flex: 1; min-width: 250px;">
+        <h3 style="font-size: 18px; margin-bottom: 10px;">CONTACT US</h3>
+        <p><strong>Phone:</strong> +63 905 437-3231</p>
+        <p><strong>Email:</strong> innsite.reservations@gmail.com</p>
+        <a href="#" style="display: inline-block; background-color: #a39688; color: rgb(0, 0, 0); padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px;">BOOK ONLINE</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Copyright Section -->
+  <div style="text-align: center; padding: 5px 0; font-size: 18px; background-color: #000; color: #fff; border-top: 1px solid #444; position: relative;">
+    <p style="margin: 10px 0;">&copy; 2024 MJJQ Transient Room. All rights reserved.</p>
+  </div>
+
+</footer>
+
+
+
+
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("active");
+    }
+ 
+  window.addEventListener("scroll", function () {
+    var navbar = document.getElementById("navbar");
+    if (window.scrollY > 50) { // Adjust scroll threshold as needed
+      navbar.classList.add("fixed");
+    } else {
+      navbar.classList.remove("fixed");
+    }
+  });
+
+
+  </script>
+</body>
+</html>
