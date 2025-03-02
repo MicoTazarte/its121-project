@@ -70,6 +70,8 @@ body {
   list-style: none;
   margin-left: auto;
   padding: 0;
+  margin-right: 27px;
+  font-weight:bold;
 }
 
 
@@ -163,7 +165,7 @@ body {
     flex-direction: column;
     position: absolute;
     top: 100%;
-    left: 100px;
+    left: 0;
     background: white;
     width: 100%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
