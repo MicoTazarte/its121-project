@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
     <link rel="icon" type="image/x-icon" href="eto na talaga.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
     body{
         margin: 0;
         padding: 0;
     }
-    h4{
-        margin: 0;
-        background-color: rgb(236, 229, 218);
+
+    h2 {
+        text-align: center;
     }
 
 </style>
@@ -39,12 +42,58 @@
             </div>
         </div>
     </nav>
-
+<br>
 <h2> Frequently Asked Questions </h2>
-<p>Find answers to common questions about your stay, booking process, and more. If you need further assistance, feel free to <b>contact us!</b></p>
-    
+<p style="text-align: center;">Find answers to common questions about your stay, booking process, and more. If you need further assistance, feel free to <b>contact us!</b></p>
 
-    
+<div class="container">
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+          <b>Q:</b> What time is check-in and check-out?</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body"><b>A:</b> Depending on your preffered stay.</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+          <b>Q:</b> Do you allow late check-out?</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body"><b>A:</b> Yes, but additional charges may apply.</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+          <b>Q:</b> Is parking available at the hotel?</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body"><b>A:</b>Yes, we offer <b>free on-site parking</b> for all the guests</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+            <b>Q:</b> How can I book a room?</a>
+          </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse">
+          <div class="panel-body"><b>A:</b>You can book directly on our website, call us or message us of Facebook Page</div>
+        </div>
+      </div>
+  </div>
+</div> 
 
 </body>
 </html>
