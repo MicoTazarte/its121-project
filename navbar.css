@@ -24,7 +24,8 @@ body {
 
 /* Navbar Wrapper */
 .navbar-wrapper {
-  height: 0px;
+  height: auto;
+  min-height: 100px;
 }
 
 .logo img {
@@ -149,62 +150,64 @@ body {
 /* Responsive Styles */
 @media (max-width: 1120px) {
   .menu-toggle {
-    display: block;
-    position: absolute;
-    right: 45px;
-    top: 12px;
+      display: block;
+      position: absolute;
+      right: 45px;
+      top: 12px;
   }
 
   .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #ffffff;
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-    margin-left: 0;
+      display: none;
+      flex-direction: column;
+      position: absolute; /* Keep it absolute */
+      top: 54px; /* Position it relative to the navbar */
+      left: 0;
+      background: #ffffff;
+      width: 100%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+      margin-left: 0;
   }
 
   .nav-links.active {
-    display: flex;
+      display: block;
   }
 
   .nav-links li {
-    text-align: center;
-    padding: 10px 0;
+      text-align: center;
+      padding: 10px 0;
   }
 
   .nav-links li a {
-    display: block;
-    width: 100%;
+      display: block;
+      width: 100%;
   }
 
   .nav-links > li:hover > a {
-    color: #a39688;
-    background-color: rgba(163, 150, 136, 0.2);
+      color: #a39688;
+      background-color: rgba(163, 150, 136, 0.2);
   }
 
-    /* Mobile Dropdown Styling */
+  /* Mobile Dropdown Styling */
   .dropdown {
-    display: none;
-    position: relative; /* Removes absolute positioning */
-    width: 100%;
-    background: transparent;
-    box-shadow: none;
+      display: none;
+      position: relative; /* Keep it absolute */
+      top: 0; /* Position it relative to the parent <li> */
+      left: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 10px 0;
   }
-
 
   /* Mobile Book Now Button Fix */
   .nav-links li a.book-now {
-    display: block;
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    padding: 12px 0;
-    font-size: 16px;
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      padding: 12px 0;
+      font-size: 16px;
   }
 }
 
