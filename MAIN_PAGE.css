@@ -254,6 +254,136 @@ body {
   z-index: 1;
   max-width: 90%;
 }
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.room {
+  font-family: "Shrikhand", serif;
+  font-size: 70px;
+  text-shadow: 4px 4px 10px rgb(0, 0, 0); /* Adds a shadow effect */
+}
+
+.facebook-section {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px;
+  font-family: sans-serif;
+  border-bottom: 1px solid ;
+  margin-left: 80px;
+  margin-right: 80px;
+
+}
+
+.facebook-text-container { /* Container for text and left icon */
+  display: flex;
+  align-items: center; /* Align icon and text vertically */
+}
+
+.facebook-text {
+  flex-grow: 1;
+  text-align: left;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.facebook-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: -1px; /* Margin for the left icon */
+}
+
+.image-gallery {
+  display: flex;
+  overflow-x: auto;
+  padding: 19px 0;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+/* Image Gallery Hover Effect - Zoom without Expansion */
+.image-gallery img {
+  height: 150px;
+  margin-right: 10px;
+  border-radius: 5px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  object-fit: cover; /* Ensures image stays within its container */
+}
+
+.image-gallery img:hover {
+  transform: scale(1); /* Zoom inside its container */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.9); /* Add shadow */
+}
+
+
+/* Lightbox Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+}
+/* Navigation Arrows */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+  color: rgba(0, 0, 0, 0.856);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Responsive: Make sure images fit smaller screens */
+@media (max-width: 768px) {
+  .lightbox-content {
+    max-width: 95%;
+    max-height: 60vh;
+  }
+}
+
+
+
+
 
 /* Footer */
 footer {
