@@ -7,27 +7,28 @@
     <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="navbar.css">
+
 <style>
-    body{
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
-        background-color: #8b6f3f;
-
-    }
-    h4{
-        margin: 0;
-        background-color: rgb(236, 229, 218);
+.body {
+     margin: 0;
+     padding: 0;
+     font-family: sans-serif;
+     background-color: #000;
     }
 
-    .testimonials-section {
+.h4 {
+    margin: 0;
+    background-color: rgb(236, 229, 218);
+    }
+
+.testimonials-section {
     padding: 50px 0;
-    background-color: #8b6f3f;
+    background-color: #c6b09c;
     text-align: center;
 }
 
 .testimonial {
-    background: white;
+    background: #000;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -41,13 +42,25 @@
 
 .testimonial .date {
     font-size: 14px;
-    color: #888;
+    color: white;
     margin-bottom: 5px;
 }
     
 .sort-buttons {
     margin-bottom: 20px;
 }
+
+.btn-primary {
+    background-color: white !important;
+    border-color: white !important;
+    color:#000
+}
+
+.btn-primary:hover {
+    background-color: #a39688 !important; 
+    border-color: #a39688 !important;
+}
+
 
 .testimonial img {
     width: 80px;
@@ -59,11 +72,20 @@
 .testimonial h4 {
     font-size: 20px;
     margin-bottom: 5px;
+    color: #c6b09c;
 }
 
 .testimonial p {
     font-size: 16px;
-    color: #666;
+    color: white;
+}
+
+.text-center {
+    text-align: center !important;
+    font-size: 1.5rem; /* Increase font size */
+    font-weight: bold; /* Make text stand out */
+    color: #000; /* Ensure visibility */
+    margin-bottom: 20px; /* Add spacing */
 }
 
 .testimonial p:nth-of-type(2) {
@@ -71,65 +93,143 @@
     color: #333;
 }
 
+/* Review Form Section */
+.review-form-section {
+    background-color: #c6b09c;
+    padding: 50px 0;
+    text-align: center;
+}
 
+.review-form-section h2 {
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.review-form-container {
+    background: #a39688;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.review-form-container .form-group {
+    margin-bottom: 15px;
+}
+
+.review-form-container label {
+    color: #fff;
+    font-weight: bold;
+}
+
+.review-form-container .form-control {
+    width: 50%;
+    margin: 0 auto;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.review-form-container textarea {
+    height: 50px;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+.review-form-container button {
+    width: 50%;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.review-form-container button:hover {
+    background-color: #c6b09c;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+}
+footer a[style*="background-color: #a39688"] { /* Targets the "BOOK ONLINE" link in the footer */
+  transition: all 0.3s ease; /* Add transition for smooth hover effect */
+  color: #000; /* Set initial text color to black */ 
+}
+
+footer a[style*="background-color: #a39688"]:hover {
+  background-color: #c6b09c; /* Slightly darker shade on hover */
+  transform: translateY(-5px); /* Move 5px upwards on hover */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+  color: white; /* Change text color to white on hover */
+}
 </style>
 </head>
+
 <body>
     <div class="top-bar">
-      <div class="contact-info">
-        <a href="tel:+63277557888">+63 2 77557888</a>
-        <a href="mailto:reservations@imhotel.com">reservations@imhotel.com</a>
-      </div>
-    </div>
-  
-    <div class="navbar-wrapper">
-      <nav class="navbar" id="navbar">
-        <div class="nav-container">
-          <div class="logo">
-            <a href="MAIN_PAGE.html"><img src="logo.png" alt="MJJQ Logo"></a>
-          </div>
-          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-          <ul class="nav-links">
-            <li><a href="#">About Us</a></li>
-            <li class="dropdown-parent">
-              <a href="ROOMS_RATES_PAGE.html" class="dropdown-toggle" onclick="toggleDropdown(this)">
-                Rooms & Rates <span class="arrow"></span>
-              </a>
-              <div class="dropdown">
-                <a href="Room1.html">Room 1</a>
-                <a href="Room2.html">Room 2</a>
-                <a href="Room3.html">Room 3</a>
-                <a href="Room4.html">Room 4</a>
-              </div>
-            </li>
-            <li><a href="LOCATION_PAGE.html">Location</a></li>
-            <li><a href="CONTACT_RESERVATION.html">Contact Us</a></li>
-            <li><a href="REVIEWS_PAGE.html">Reviews</a></li>
-            <li><a href="BLOG_TRAVEL_TIPS.html">Blog</a></li>
-            <li><a href="DISCOUNTS_PAGE.html">Offers</a></li>
-            <li><a href="SUPPORT_PAGE.html">FAQs</a></li>
-            <li><a href="CONTACT_RESERVATION.html" class="book-now">BOOK NOW</a></li>
-          </ul>
+        <div class="contact-info">
+          <a href="tel:+63277557888">+63 2 77557888</a>
+          <a href="mailto:reservations@imhotel.com">reservations@imhotel.com</a>
         </div>
-      </nav>
-    </div>
+      </div>
+    
+      <div class="navbar-wrapper">
+        <nav class="navbar" id="navbar">
+          <div class="nav-container">
+            <div class="logo">
+              <a href="MAIN_PAGE.html"><img src="logo.png" alt="MJJQ Logo"></a>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links">
+              <li><a href="#">About Us</a></li>
+              <li class="dropdown-parent">
+                <a href="ROOMS_RATES_PAGE.html" class="dropdown-toggle" onclick="toggleDropdown(this)">
+                  Rooms & Rates <span class="arrow"></span>
+                </a>
+                <div class="dropdown">
+                  <a href="Room1.html">Room 1</a>
+                  <a href="Room2.html">Room 2</a>
+                  <a href="Room3.html">Room 3</a>
+                  <a href="Room4.html">Room 4</a>
+                </div>
+              </li>
+              <li><a href="LOCATION_PAGE.html">Location</a></li>
+              <li><a href="CONTACT_RESERVATION.html">Contact Us</a></li>
+              <li><a href="REVIEWS_PAGE.html">Reviews</a></li>
+              <li><a href="BLOG_TRAVEL_TIPS.html">Blog</a></li>
+              <li><a href="DISCOUNTS_PAGE.html">Offers</a></li>
+              <li><a href="SUPPORT_PAGE.html">FAQs</a></li>
+              <li><a href="CONTACT_RESERVATION.html" class="book-now">BOOK NOW</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
 
-    <section class="testimonials-section">
-        <div class="container">
-            <h2 class="text-center">Reviews</h2>
-            <p class="text-center">See why our customers love our services!</p>
-            <br/>
+    <section class="testimonials-section" style="margin-top: -100px;">
+        <div class="container"><br><br><br>
+            <h2 class="text-center">See how much our customers love our services!</h2>
 
             <div class="text-center sort-buttons">
-                <button class="btn btn-primary" onclick="sortReviews('newest')">Newest</button>
-                <button class="btn btn-primary" onclick="sortReviews('highest')">Highest Rating</button>
-                <button class="btn btn-primary" onclick="sortReviews('lowest')">Lowest Rating</button>
+                <button class="btn btn-primary" onclick="sortReviews('relevant')"><b>Most Relevant</b></button>
+                <button class="btn btn-primary" onclick="sortReviews('newest')"><b>Newest</b></button>
+                <button class="btn btn-primary" onclick="sortReviews('highest')"><b>Highest Rating</b></button>
+                <button class="btn btn-primary" onclick="sortReviews('lowest')"><b>Lowest Rating</b></button>
             </div>
 
             <div class="row" id="testimonials-container">
                 <!-- Reviews -->
                 <div class="col-md-4" onclick="window.open('https://g.co/kgs/yczwCgd', '_blank')">
                     <div class="testimonial" data-rating="5" data-date="2021-02-03">
+                        <img src="/reviews/jo.png" alt="User 1">
                         <p class="date">4 years ago</p>
                         <h4>Jhared Oscar</h4>                        
                         <p>⭐⭐⭐⭐⭐</p>
@@ -138,6 +238,7 @@
 
                 <div class="col-md-4" onclick="window.open('https://g.co/kgs/7MMsuTx', '_blank')">
                     <div class="testimonial" data-rating="5" data-date="2025-01-03">
+                        <img src="/reviews/sp.png" alt="User 2">
                         <p class="date">a month ago</p>
                         <h4>Saintessielle “Santa” Ponce</h4>                        
                         <p>⭐⭐⭐⭐⭐</p>
@@ -146,6 +247,7 @@
 
                 <div class="col-md-4" onclick="window.open('https://g.co/kgs/iR5Bghh', '_blank')">
                     <div class="testimonial" data-rating="5" data-date="2024-09-03">
+                        <img src="/reviews/mj.png" alt="User 3">
                         <p class="date">6 months ago</p>
                         <h4>Mary Jhel Quiddam</h4>                        
                         <p>⭐⭐⭐⭐⭐</p>
@@ -154,6 +256,7 @@
 
                 <div class="col-md-4" onclick="window.open('https://g.co/kgs/Zgs1vXm', '_blank')">
                     <div class="testimonial" data-rating="5" data-date="2024-08-03">
+                        <img src="/reviews/at.png" alt="User 4">
                         <p class="date">7 months ago</p>
                         <h4>ATONG TV</h4>                        
                         <p>⭐⭐⭐⭐⭐</p>
@@ -162,6 +265,7 @@
 
                 <div class="col-md-4" onclick="window.open('https://g.co/kgs/bq5ZL3k', '_blank')">
                     <div class="testimonial" data-rating="5" data-date="2023-02-03">
+                        <img src="/reviews/mc.png" alt="User 5">
                         <p class="date">2 years ago</p>
                         <h4>MIKEL CHANNEL Apayao</h4>                        
                         <p>⭐⭐⭐⭐⭐</p>
@@ -170,6 +274,7 @@
 
                 <div class="col-md-4" onclick="window.open('https://g.co/kgs/45P9vP1', '_blank')">
                     <div class="testimonial" data-rating="5" data-date="2023-02-03">
+                        <img src="/reviews/da.png" alt="User 6">
                         <p class="date">2 years ago</p>
                         <h4>Darry Ann Gaylan</h4>                        
                         <p>⭐⭐⭐⭐⭐</p>
@@ -178,6 +283,7 @@
 
                 <div class="col-md-4" onclick="window.open('https://g.co/kgs/G2gB8ex', '_blank')">
                     <div class="testimonial" data-rating="1" data-date="2023-02-03">
+                        <img src="/reviews/sm.png" alt="User 7">
                         <p class="date">2 years ago</p>
                         <h4>Suman Maji</h4>                        
                         <p>⭐</p>
@@ -188,6 +294,7 @@
 
                 <div class="col-md-4" onclick="window.open('https://g.co/kgs/7moYFXJ', '_blank')">
                     <div class="testimonial" data-rating="2" data-date="2024-08-03">
+                        <img src="/reviews/jp.png" alt="User 8">
                         <p class="date">7 months ago</p>
                         <h4>Johnpaul Lacandolaa</h4>                        
                         <p>⭐⭐</p>
@@ -198,6 +305,7 @@
 
                 <div class="col-md-4" onclick="window.open('https://g.co/kgs/zVoD4TY', '_blank')">
                     <div class="testimonial" data-rating="5" data-date="2024-02-03">
+                        <img src="/reviews/an.png" alt="User 9">
                         <p class="date">a year ago</p>
                         <h4>Andhie Naranjo</h4>
                         <p>⭐⭐⭐⭐⭐</p>
@@ -207,6 +315,7 @@
 
                 <div class="col-md-4" onclick="window.open('https://g.co/kgs/2atwukZ', '_blank')">
                     <div class="testimonial" data-rating="1" data-date="2022-02-03">
+                        <img src="/reviews/js.png" alt="User 10">
                         <p class="date">3 years ago</p>
                         <h4>Jefferson Sacopla</h4>                        
                         <p>⭐</p>
@@ -217,6 +326,7 @@
 
                 <div class="col-md-4" onclick="window.open('https://g.co/kgs/Ai2FnZQ', '_blank')">
                     <div class="testimonial" data-rating="5" data-date="2021-02-03">
+                        <img src="/reviews/ba.png" alt="User 11">
                         <p class="date">4 years ago</p>
                         <h4>Butz Argulla</h4>
                         <p>⭐⭐⭐⭐⭐</p>
@@ -227,6 +337,7 @@
 				
 				<div class="col-md-4" onclick="window.open('https://g.co/kgs/A495CPj', '_blank')">
                     <div class="testimonial" data-rating="5" data-date="2023-02-03">
+                        <img src="/reviews/rm.png" alt="User 12">
                         <p class="date">2 years ago</p>
                         <h4>Rakista MoTOURider</h4>                        </h4>
                         <p>⭐⭐⭐⭐⭐</p>
@@ -236,6 +347,7 @@
 
                 <div class="col-md-4" onclick="window.open('https://g.co/kgs/zdZuewB', '_blank')">
                     <div class="testimonial" data-rating="4" data-date="2024-08-03">
+                        <img src="/reviews/dc.png" alt="User 13">
                         <p class="date">7 months ago</p>
                         <h4>Domingo Cariazo Cardines III</h4>                        
                         <p>⭐⭐⭐⭐</p>
@@ -248,6 +360,7 @@
 
                 <div class="col-md-4" onclick="window.open('https://g.co/kgs/BHL6r4A', '_blank')"> 
                     <div class="testimonial" data-rating="5" data-date="2024-10-03">
+                        <img src="/reviews/cm.png" alt="User 14">
                         <p class="date">5 months ago</p>
                         <h4>Camille Miguel</h4>
                         <p>⭐⭐⭐⭐⭐</p>
@@ -260,6 +373,7 @@
 				
 				<div class="col-md-4" onclick="window.open('https://g.co/kgs/QQkjVUY', '_blank')">
                     <div class="testimonial" data-rating="5" data-date="2024-02-03">
+                        <img src="reviews/jl.png" alt="User 15">
                         <p class="date">a year ago</p>
                         <h4>Jonathan Lau</h4>                        
                         <p>⭐⭐⭐⭐⭐</p>
@@ -270,6 +384,7 @@
 
                 <div class="col-md-4" onclick="window.open('https://g.co/kgs/kLaSR3F', '_blank')">
                     <div class="testimonial" data-rating="5" data-date="2024-02-03">
+                        <img src="/reviews/se.png" alt="User 16">
                         <p class="date">a year ago</p>
                         <h4>Shelly Escalante</h4>
                         <p>⭐⭐⭐⭐⭐</p>
@@ -282,6 +397,7 @@
 
                 <div class="col-md-4" onclick="window.open('https://g.co/kgs/x4xT9jr', '_blank')">
                     <div class="testimonial" data-rating="2" data-date="2022-02-03">
+                        <img src="/reviews/fb.png" alt="User 17">
                         <p class="date">3 years ago</p>
                         <h4>Frederick Batara</h4>                        
                         <p>⭐⭐</p>
@@ -292,15 +408,46 @@
         </div>
     </section>
 
+     <!-- Review Submission Form -->
+     <section class="review-form-section">
+      <div class="container">
+          <h2 class="text-center">Leave a Review</h2>
+          <form id="review-form">
+              <div class="form-group">
+                  <label for="name">Your Name:</label>
+                  <input type="text" class="form-control" id="name" required>
+              </div>
+
+              <div class="form-group">
+                  <label for="rating">Rating:</label>
+                  <select class="form-control" id="rating">
+                      <option>⭐⭐⭐⭐⭐</option>
+                      <option>⭐⭐⭐⭐</option>
+                      <option>⭐⭐⭐</option>
+                      <option>⭐⭐</option>
+                      <option>⭐</option>
+                  </select>
+              </div>
+
+              <div class="form-group">
+                  <label for="review">Your Review:</label>
+                  <textarea class="form-control" id="review" rows="3" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit Review</button>
+          </form>
+      </div>
+  </section>
+
     <footer style="background-color: #000; color: #fff; padding: 30px; padding-top: 35px; padding-bottom: 5px;">
-        <div style="position: relative; top: -20px;">
+        <div style="position: relative; top: -30px;">
           <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; text-align: center;">
             <div style="flex: 1; min-width: 250px;">
               <img src="logo.png" alt="MJJQ Logo" style="max-width: 120px;">
               <p style="margin-top: 10px;">Your Home Away From Home</p>
             </div>
             <div style="flex: 1; min-width: 250px;">
-              <h3 style="font-size: 18px; margin-bottom: 10px;"><b>LOCATION</b></h3>
+              <h3 style="font-size: 18px; margin-bottom: 10px;">LOCATION</h3>
               <p>P37-12 11th & 16th Street <br> Pasay - Manila, 1309</p>
               <div>
                 <a href="#" style="margin-right: 11.5px;"><img src="email-icon.png" alt="Email" width="30" height="28"></a>
@@ -309,7 +456,7 @@
               </div>
             </div>
             <div style="flex: 1; min-width: 250px;">
-              <h3 style="font-size: 18px; margin-bottom: 10px;"><b>CONTACT US</b></h3>
+              <h3 style="font-size: 18px; margin-bottom: 10px;">CONTACT US</h3>
               <p><strong>Phone:</strong> +63 905 437-3231</p>
               <p><strong>Email:</strong> innsite.reservations@gmail.com</p>
               <a href="#" style="display: inline-block; background-color: #a39688; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px;">BOOK ONLINE</a> 
@@ -319,29 +466,75 @@
         <div style="text-align: center; padding: 5px 0; font-size: 18px; background-color: #000; color: #fff; border-top: 1px solid #444; position: relative;">
           <p style="margin: 10px 0;">© 2024 MJJQ Transient Room. All rights reserved.</p>
         </div>
-    </footer>
-    
-      <script src="MAIN_PAGE.js"></script> 
+      </footer>
 
+    <script src="navbar.js">
+    let originalOrder = [];
 
-    <script>
-        function sortReviews(criteria) {
-            let container = document.getElementById("testimonials-container");
-            let reviews = Array.from(container.getElementsByClassName("testimonial"));
-            
-            reviews.sort((a, b) => {
-                if (criteria === 'newest') {
-                    return new Date(b.getAttribute("data-date")) - new Date(a.getAttribute("data-date"));
-                } else if (criteria === 'highest') {
-                    return b.getAttribute("data-rating") - a.getAttribute("data-rating");
-                } else if (criteria === 'lowest') {
-                    return a.getAttribute("data-rating") - b.getAttribute("data-rating");
-                }
-            });
-            
-            reviews.forEach(review => container.appendChild(review));
+    window.onload = function() {
+        let container = document.getElementById("testimonials-container");
+        originalOrder = Array.from(container.getElementsByClassName("col-md-4"));
+    };
+
+    function sortReviews(criteria) {
+        let container = document.getElementById("testimonials-container");
+        let reviewColumns = Array.from(container.getElementsByClassName("col-md-4"));
+
+        if (criteria === 'relevant') {
+            // Restore original order
+            container.innerHTML = "";
+            originalOrder.forEach(column => container.appendChild(column));
+            return;
         }
+
+        reviewColumns.sort((a, b) => {
+            let aValue, bValue;
+
+            if (criteria === 'newest') {
+                aValue = new Date(a.querySelector('.testimonial').getAttribute("data-date"));
+                bValue = new Date(b.querySelector('.testimonial').getAttribute("data-date"));
+                return bValue - aValue;
+            } else if (criteria === 'highest') {
+                aValue = parseInt(a.querySelector('.testimonial').getAttribute("data-rating"));
+                bValue = parseInt(b.querySelector('.testimonial').getAttribute("data-rating"));
+                return bValue - aValue;
+            } else if (criteria === 'lowest') {
+                aValue = parseInt(a.querySelector('.testimonial').getAttribute("data-rating"));
+                bValue = parseInt(b.querySelector('.testimonial').getAttribute("data-rating"));
+                return aValue - bValue;
+            }
+        });
+
+        reviewColumns.forEach(column => container.appendChild(column));
+    }
+
+    document.getElementById('review-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get input values
+            let name = document.getElementById('name').value;
+            let rating = document.getElementById('rating').value;
+            let review = document.getElementById('review').value;
+
+            // Create new review element
+            let newReview = document.createElement('div');
+            newReview.classList.add('col-md-4');
+            newReview.innerHTML = `
+                <div class="testimonial">
+                    <img src="images/default-user.jpg" alt="${name}">
+                    <h4>${name}</h4>
+                    <p>${rating}</p>
+                    <p>"${review}"</p>
+                </div>
+            `;
+
+            // Append new review
+            document.getElementById('testimonials-container').appendChild(newReview);
+
+            // Clear form fields
+            document.getElementById('review-form').reset();
+        });
     </script>
     
 </body>
-</html>
+</html> 
