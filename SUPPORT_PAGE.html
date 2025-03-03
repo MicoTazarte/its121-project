@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MJJQ - Support</title>
+    <title>MJJQ - FAQs</title>
     <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style>
-    body{
-        background-color: #a39688;
-    }
+    <link rel="stylesheet" href="navbar.css"> 
     
-    h2 {
-        text-align: center;
-    }
+    <style>
+        body {
+            background-color: #a39688;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .accordion-item{
+          margin-left: 20px;
+          margin-right: 20px;
+        }
 
-</style>
+
+    </style>
 </head>
 <body>
   <div class="top-bar">
@@ -29,186 +32,188 @@
     </div>
 </div>
 
-  <div class="navbar-wrapper">
-    <nav class="navbar" id="navbar">
+<div class="navbar-wrapper">
+  <nav class="navbar" id="navbar">
       <div class="nav-container">
-        <div class="logo">
-          <a href="MAIN_PAGE.html"><img src="logo.png" alt="MJJQ Logo"></a>
-        </div>
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-        <ul class="nav-links">
-          <li><a href="aboutUs.html">About Us</a></li>
-          <li class="dropdown-parent">
-            <a href="ROOMS_RATES_PAGE.html" class="dropdown-toggle" onclick="toggleDropdown(this)">
-              Rooms & Rates <span class="arrow"></span>
-            </a>
-            <div class="dropdown">
-              <a href="Room1.html">Room 1</a>
-              <a href="Room2.html">Room 2</a>
-              <a href="Room3.html">Room 3</a>
-              <a href="Room4.html">Room 4</a>
-            </div>
-          </li>
-          <li><a href="LOCATION_PAGE.html">Location</a></li>
-          <li><a href="CONTACT_RESERVATION.html">Contact Us</a></li>
-          <li><a href="REVIEWS_PAGE.html">Reviews</a></li>
-          <li><a href="BLOG_TRAVEL_TIPS.html">Blog</a></li>
-          <li><a href="DISCOUNTS_PAGE.html">Offers</a></li>
-          <li><a href="SUPPORT_PAGE.html">FAQs</a></li>
-          <li><a href="CONTACT_RESERVATION.html" class="book-now">BOOK NOW</a></li>
-        </ul>
+          <div class="logo">
+              <a href="MAIN_PAGE.html"><img src="logo.png" alt="MJJQ Logo"></a>
+          </div>
+          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+          <ul class="nav-links">
+              <li><a href="aboutUs.html">About Us</a></li>
+              <li class="dropdown-parent">
+                  <a href="ROOMS_RATES_PAGE.html" class="dropdown-toggle" onclick="toggleDropdown(this)">
+                      Rooms & Rates <span class="arrow"></span>
+                  </a>
+                  <div class="dropdown">
+                      <a href="Room1.html">Room 1</a>
+                      <a href="Room2.html">Room 2</a>
+                      <a href="Room3.html">Room 3</a>
+                      <a href="Room4.html">Room 4</a>
+                  </div>
+              </li>
+              <li><a href="LOCATION_PAGE.html">Location</a></li>
+              <li><a href="CONTACT_RESERVATION.html">Contact Us</a></li>
+              <li><a href="REVIEWS_PAGE.html">Reviews</a></li>
+              <li><a href="BLOG_TRAVEL_TIPS.html">Blog</a></li>
+              <li><a href="DISCOUNTS_PAGE.html">Offers</a></li>
+              <li><a href="SUPPORT_PAGE.html">FAQs</a></li>
+              <li><a href="CONTACT_RESERVATION.html" class="book-now">BOOK NOW</a></li>
+          </ul>
       </div>
-    </nav>
-  </div>
-<h2><b>Frequently Asked Questions</b> </h2>
-<p style="text-align: center;">Find answers to common questions about your stay, booking process, and more. If you need further assistance, feel free to <b>contact us!</b></p>
-<hr />
+  </nav>
+</div>
 
-<div class="container">
-<div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-          <b>Q:</b> What time is check-in and check-out?</a>
-        </h4>
-      </div>
-      <div id="collapse1" class="panel-collapse collapse in">
-        <div class="panel-body"><b>A:</b> Depending on your preffered stay.</div>
+    <h2 class="text-center"><b>Frequently Asked Questions</b></h2>
+    <p class="text-center">Find answers to common questions about your stay, booking process, and more. If you need further assistance, feel free to <b>contact us!</b></p>
+    <hr>
+    <div class="container faq-container"> 
+      <div class="accordion" id="faqAccordion">
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              <b>Q:</b> What time is check-in and check-out?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body"><b>A:</b> Depending on your preferred stay.</div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              <b>Q:</b> Do you allow late check-out?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body"><b>A:</b> Yes, but additional charges may apply.</div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              <b>Q:</b> Is parking available at the hotel?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body"><b>A:</b> Yes, we offer <b>free on-site parking</b> for all guests.</div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+              <b>Q:</b> How can I book a room?
+            </button>
+          </h2>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body"><b>A:</b> You can book directly on our website, call us or message us on our Facebook Page.</div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+              <b>Q:</b> What payment methods do you accept?
+            </button>
+          </h2>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body"><b>A:</b> We accept <b>cash, credit/debit cards, and online transfers.</b></div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+              <b>Q:</b> Can I cancel or modify my booking?
+            </button>
+          </h2>
+          <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body"><b>A:</b> Yes, you can cancel or modify your booking <b>up to 24 hours before check-in</b> for free.</div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+              <b>Q:</b> Do you have an in-house meals to order?
+            </button>
+          </h2>
+          <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body"><b>A:</b> > Yes, but we only have breakfast meals but you can order it anytime depending on availability.</div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+              <b>Q:</b>  Do you offer room service?
+            </button>
+          </h2>
+          <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body"><b>A:</b> Yes, room service is available from <b>7:00am to 10:00pm.</b></div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
+              <b>Q:</b> Are there any tourist attractions nearby?
+            </button>
+          </h2>
+          <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body"><b>A:</b> Yes, we are close to <b>Fort Ramon Magsaysay Military Camp Base, Minalungao National Park, and Pahingahan Dam.</b></div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
+              <b>Q:</b> Do you allow pets?
+            </button>
+          </h2>
+          <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body"><b>A:</b> YES! Your furbabies are welcome in the hotel. </b></div>
+          </div>
+        </div>
+  
       </div>
     </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-          <b>Q:</b> Do you allow late check-out?</a>
-        </h4>
+    <br><br><Br>
+  
+    <footer style="background-color: #000; color: #fff; padding: 30px; padding-top: 35px; padding-bottom: 5px;">
+      <div style="position: relative; top: -20px;">
+          <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; text-align: center;">
+              <div style="flex: 1; min-width: 250px;">
+                  <img src="logo2.png" alt="MJJQ Logo" style="max-width: 120px;">
+                  <p style="margin-top: 10px;">Comfort and warmth, just like home</p>
+              </div>
+              <div style="flex: 1; min-width: 250px;">
+                  <h3 style="font-size: 18px; margin-bottom: 10px;"><b>LOCATION</b></h3>
+                  <p>Barangay Militar, Fort Magsaysay, <br> Palayan City, Philippines</p>
+                  <div>
+                      <a href="mailto:mjjqtransient@gmail.com" style="margin-right: 11.5px;"><img src="email-icon.png" alt="Email" width="30" height="28"></a>
+                      <a href="https://www.facebook.com/share/1BPRxd3VGk/" style="margin-right: 10px;"><img src="facebook-icon.png" alt="Facebook" width="24"></a>
+                      <a href="https://maps.app.goo.gl/PQ18yqTUHaU5JnnA6"><img src="location-icon.png" alt="Google" width="24"></a>
+                  </div>
+              </div>
+              <div style="flex: 1; min-width: 250px;">
+                  <h3 style="font-size: 18px; margin-bottom: 10px;"><b>CONTACT US</b></h3>
+                  <p><strong>Phone:</strong> +63 918 264-5515</p>
+                  <p><strong>Email:</strong> mjjqtransient@gmail.com</p>
+                  <a href="CONTACT_RESERVATION.html" style="display: inline-block; background-color: #a39688; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px;">BOOK ONLINE</a>
+              </div>
+          </div>
       </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body"><b>A:</b> Yes, but additional charges may apply.</div>
+      <div style="text-align: center; padding: 5px 0; font-size: 18px; background-color: #000; color: #fff; border-top: 1px solid #444; position: relative;">
+          <p style="margin: 12px 0;">© 2024 MJJQ Transient Room. All rights reserved.</p>
+          <p style="font-size: medium;">Nicole Scarlet G. Cloa, Fiona Hailey L. Maraña, Roelle Aira T. Milar, Jamela Mae S. Quiddam, Mico Angelo C. Tazarte</p>
       </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-          <b>Q:</b> Is parking available at the hotel?</a>
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body"><b>A:</b> Yes, we offer <b>free on-site parking</b> for all the guests</div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-            <b>Q:</b> How can I book a room?</a>
-          </h4>
-        </div>
-        <div id="collapse4" class="panel-collapse collapse">
-          <div class="panel-body"><b>A:</b> You can book directly on our website, call us or message us of Facebook Page</div>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
-            <b>Q:</b> What payment methods do you accept?</a>
-          </h4>
-        </div>
-        <div id="collapse5" class="panel-collapse collapse">
-          <div class="panel-body"><b>A:</b> We accept <b>cash, credit/debit cards, and online transfers</b>.</div>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
-            <b>Q:</b> Can I cancel or modify my booking?</a>
-          </h4>
-        </div>
-        <div id="collapse6" class="panel-collapse collapse">
-          <div class="panel-body"><b>A:</b> Yes, you can cancel or modify your booking <b>up to 24 hours before check-in</b> for free.</div>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
-            <b>Q:</b> Do you have an in-house meals to order?</a>
-          </h4>
-        </div>
-        <div id="collapse7" class="panel-collapse collapse">
-          <div class="panel-body"><b>A:</b> Yes, but we only have breakfast meals but you can order it anytime depending on availability.</div>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
-            <b>Q:</b> Do you offer room service?</a>
-          </h4>
-        </div>
-        <div id="collapse8" class="panel-collapse collapse">
-          <div class="panel-body"><b>A:</b> Yes, room service is available from <b>7:00am to 10:00pm</b></div>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
-            <b>Q:</b> Are there any tourist attractions nearby?</a>
-          </h4>
-        </div>
-        <div id="collapse9" class="panel-collapse collapse">
-          <div class="panel-body"><b>A:</b> Yes, we are close to <b>Fort Ramon Magsaysay Military Camp Base, Minalungao National Park, and Pahingahan Dam</b></div>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
-            <b>Q:</b> Do you allow pets?</a>
-          </h4>
-        </div>
-        <div id="collapse10" class="panel-collapse collapse">
-          <div class="panel-body"><b>A:</b> YES! Your furbabies are welcome in the hotel. </b></div>
-        </div>
-      </div>
-  </div>
-</div> 
-<footer style="background-color: #000; color: #fff; padding: 30px; padding-top: 35px; padding-bottom: 5px;">
-  <div style="position: relative; top: -20px;">
-    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; text-align: center;">
-      <div style="flex: 1; min-width: 250px;">
-        <img src="logo2.png" alt="MJJQ Logo" style="max-width: 120px;">
-        <p style="margin-top: 10px;">Comfort and warmth, just like home</p>
-      </div>
-      <div style="flex: 1; min-width: 250px;">
-        <h3 style="font-size: 18px; margin-bottom: 10px;"><b>LOCATION</b></h3>
-        <p>Barangay Militar, Fort Magsaysay, <br> Palayan City, Philippines</p>
-        <div>
-          <a href="mailto:mjjqtransient@gmail.com" style="margin-right: 11.5px;"><img src="email-icon.png" alt="Email" width="30" height="28"></a>
-          <a href="https://www.facebook.com/share/1BPRxd3VGk/" style="margin-right: 10px;"><img src="facebook-icon.png" alt="Facebook" width="24"></a>
-          <a href="https://maps.app.goo.gl/PQ18yqTUHaU5JnnA6"><img src="location-icon.png" alt="Google" width="24"></a>
-        </div>
-      </div>
-      <div style="flex: 1; min-width: 250px;">
-        <h3 style="font-size: 18px; margin-bottom: 10px;"><b>CONTACT US</b></h3>
-        <p><strong>Phone:</strong> +63 918 264-5515</p>
-        <p><strong>Email:</strong> mjjqtransient@gmail.com</p>
-        <a href="CONTACT_RESERVATION.html" style="display: inline-block; background-color: #a39688; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px;">BOOK ONLINE</a> 
-      </div>
-    </div>
-  </div>
-  <div style="text-align: center; padding: 5px 0; font-size: 18px; background-color: #000; color: #fff; border-top: 1px solid #444; position: relative;">
-    <p style="margin: 12px 0;">© 2024 MJJQ Transient Room. All rights reserved.</p>
-    <p style="font-size: medium;">Nicole Scarlet G. Cloa, Fiona Hailey L. Maraña, Roelle Aira T. Milar, Jamela Mae S. Quiddam, Mico Angelo C. Tazarte</p>
-  </div>
-</footer>
-
-<script src="MAIN_PAGE.js"></script> 
-
+  </footer>
+  
+  <script src="MAIN_PAGE.js"></script> 
 </body>
 </html>

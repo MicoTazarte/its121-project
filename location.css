@@ -1,24 +1,52 @@
 body {
-    text-align: center; 
-    margin-left: 500px;
-    margin-right: 500px;
+  text-align: center; 
+  margin-left: auto; /* Use auto margin for responsiveness */
+  margin-right: auto; /* Use auto margin for responsiveness */
 }
+
 .hero {
-    height: 800px;
-    background: url('no\ text.jpg') no-repeat center center/cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
-    position: relative;
+  height: 800px; 
+  background: url('no text.jpg') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 1200px) {
+  .hero {
+      height: 700px; /* Adjust for larger screens */
   }
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 992px) {
+  .hero {
+      height: 600px; /* Adjust for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+      height: 500px; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+      height: 400px; /* Adjust for mobile screens */
+  }
 }
