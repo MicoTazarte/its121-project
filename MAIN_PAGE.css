@@ -10,16 +10,28 @@ body {
 .top-bar {
   background-color: #000;
   color: #fff;
-  padding: 10px 0;
+  padding: 10px 25px; /* Add some padding to the sides */
+
   font-size: 14px;
-  text-align: center;
   width: 100%;
+}
+
+.top-bar .contact-info {
+  display: flex; /* Make it a flex container */
+  align-items: center; /* Vertically align items */
+  text-align: left; /* Align text to the left */
 }
 
 .top-bar .contact-info a {
   color: #fff;
   text-decoration: none;
-  margin-right: 20px;
+  margin-left: 1px; /* Add margin to the left of the links */
+}
+
+.top-bar .contact-info .icon {
+  width: 20px; /* Adjust icon size as needed */
+  height: auto;
+  margin-right: 5px; /* Add margin to the right of the icon */
 }
 
 /* Navbar Wrapper */

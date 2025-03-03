@@ -10,16 +10,28 @@ body {
 .top-bar {
   background-color: #000;
   color: #fff;
-  padding: 10px 0;
+  padding: 10px 25px; /* Add some padding to the sides */
+
   font-size: 14px;
-  text-align: center;
   width: 100%;
+}
+
+.top-bar .contact-info {
+  display: flex; /* Make it a flex container */
+  align-items: center; /* Vertically align items */
+  text-align: left; /* Align text to the left */
 }
 
 .top-bar .contact-info a {
   color: #fff;
   text-decoration: none;
-  margin-right: 20px;
+  margin-left: 1px; /* Add margin to the left of the links */
+}
+
+.top-bar .contact-info .icon {
+  width: 20px; /* Adjust icon size as needed */
+  height: auto;
+  margin-right: 5px; /* Add margin to the right of the icon */
 }
 
 /* Navbar Wrapper */
@@ -190,17 +202,17 @@ body {
 
   /* Mobile Dropdown Styling */
   .dropdown {
-    display: none; /* Default to hidden */
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    padding: 10px 0;
+      display: none; /* Default to hidden */
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 10px 0;
   }
   .dropdown.active{
-    display: block;
+      display: block;
   }
 
   /* Mobile Book Now Button Fix */
@@ -224,7 +236,7 @@ footer {
 }
 footer a[style*="background-color: #a39688"] { /* Targets the "BOOK ONLINE" link in the footer */
   transition: all 0.3s ease; /* Add transition for smooth hover effect */
-  color: #000; /* Set initial text color to black */ 
+  color: #000; /* Set initial text color to black */
 }
 
 footer a[style*="background-color: #a39688"]:hover {
