@@ -1,11 +1,6 @@
-body {
-    text-align: center; 
-    margin-left: 500px;
-    margin-right: 500px;
-}
 .hero {
     height: 800px;
-    background: url('no\ text.jpg') no-repeat center center/cover;
+    background: url('About\ Us\(1\).jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     align-items: center;
