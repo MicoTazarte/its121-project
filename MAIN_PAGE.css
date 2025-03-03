@@ -209,7 +209,7 @@ body {
 
 /* Hero Section */
 .hero {
-  height: 600px;
+  height: 800px;
   background: url('no\ text.jpg') no-repeat center center/cover;
   display: flex;
   flex-direction: column;
