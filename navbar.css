@@ -11,7 +11,6 @@ body {
   background-color: #000;
   color: #fff;
   padding: 10px 25px; /* Add some padding to the sides */
-
   font-size: 14px;
   width: 100%;
 }
@@ -98,7 +97,6 @@ body {
   color: #000;
   padding: 8px 12px;
   transition: color 0.3s ease;
-
 }
 
 .nav-links > li:hover > a {
@@ -115,6 +113,7 @@ body {
   width: 200px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   padding: 10px 0;
+  border-radius: 5px;
 }
 
 .nav-links li:hover .dropdown {
@@ -171,14 +170,13 @@ body {
   .nav-links {
       display: none;
       flex-direction: column;
-      position: absolute; /* Keep it absolute */
-      top: 65px; /* Position it relative to the navbar */
+      position: absolute;
+      top: 65px;
       left: 0;
       background: #ffffff;
       width: 100%;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: 10px 0;
-      margin-left: 0;
   }
 
   .nav-links.active {
@@ -202,16 +200,18 @@ body {
 
   /* Mobile Dropdown Styling */
   .dropdown {
-      display: none; /* Default to hidden */
+      display: none;
       position: relative;
-      top: 0;
-      left: 0;
-      width: 100%;
+      width: 80%;
+      left: 10%;
       background: white;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      padding: 10px 0;
+      padding: 8px;
+      font-size: 14px;
+      border-radius: 5px;
   }
-  .dropdown.active{
+  
+  .dropdown.active {
       display: block;
   }
 
@@ -226,6 +226,7 @@ body {
   }
 }
 
+
 /* Footer */
 footer {
   background-color: #000;
@@ -234,14 +235,14 @@ footer {
   padding: 20px 0;
   width: 100%;
 }
-footer a[style*="background-color: #a39688"] { /* Targets the "BOOK ONLINE" link in the footer */
-  transition: all 0.3s ease; /* Add transition for smooth hover effect */
-  color: #000; /* Set initial text color to black */
+footer a[style*="background-color: #a39688"] {
+  transition: all 0.3s ease;
+  color: #000;
 }
 
 footer a[style*="background-color: #a39688"]:hover {
-  background-color: #c6b09c; /* Slightly darker shade on hover */
-  transform: translateY(-5px); /* Move 5px upwards on hover */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
-  color: white; /* Change text color to white on hover */
+  background-color: #c6b09c;
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
 }
