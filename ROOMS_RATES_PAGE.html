@@ -8,303 +8,237 @@
     <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="navbar.css"> 
     <style>
-h4 {
-    margin: 0;
-    background-color: rgb(236, 229, 218);
-}
+        .carousel-inner img {
+            width: 100%;
+            height: 580px;
+            object-fit: cover;
+        }
 
-.carousel-inner img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-}
+        .carousel-caption {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            text-align: left;
+            color: white;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
 
-/* Initial state of the text (invisible) */
-.carousel-caption {
-    position: absolute;
-    top: 50%;
-    left: 10%; /* Moves text to the left */
-    transform: translateY(-50%); /* Keeps text vertically centered */
-    text-align: left; /* Align text to the left */
-    color: white; /* Ensures readability */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 1s ease-in-out; /* Smooth fade effect */
-}
+        .carousel-item-next .carousel-caption,
+        .carousel-item-prev .carousel-caption {
+            opacity: 0;
+        }
 
-/* Add an effect to fade in text */
-.carousel-item-next .carousel-caption,
-.carousel-item-prev .carousel-caption {
-    opacity: 0;
-}
+        .carousel-item.active .carousel-caption {
+            opacity: 1;
+        }
 
-.carousel-item.active .carousel-caption {
-    opacity: 1; /* Fades in when active */
-}
+        .carousel-caption h5 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
 
-.amenities-section, .rates-section {
-    text-align: center;
-    padding: 30px 20px;
-    max-width: 800px; /* Prevents section from stretching too wide */
-    margin: 0 auto; /* Centers the section */
-}
+        .carousel-caption p {
+            font-size: 1.5rem;
+        }
 
-.amenities-section h2, .rates-section h2 {
-    font-weight: bold;
-    font-size: 1.8rem; /* Reduced font size */
-}
+        .amenities-section {
+            text-align: center;
+            padding: 30px 20px;
+        }
 
-.amenities-section p, .rates-section p {
-    font-style: italic;
-    color: green;
-}
+        .amenities-section h2 {
+            font-weight: bold;
+        }
 
-.amenities-icons, .rates-table {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-}
+        .amenities-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
 
-.amenity, .rate {
-    text-align: center;
-    width: 150px;
-}
+        .amenity {
+            text-align: center;
+            width: 150px;
+        }
 
-.amenity img {
-    width: 40px; /* Reduced size */
-    height: 40px;
-    object-fit: contain; /* Prevents distortion */
-}
+        .amenity img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
 
-.rates-table {
-    width: 80%;
-    margin: 0 auto;
-    border-collapse: collapse;
-}
+        .room-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 30px;
+            margin: 0 auto;
+            max-width: 1300px; 
+        }
+        .room-image img {
+            max-width: 100%; /* Make image responsive */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; 
+        }
 
-.rates-table th, .rates-table td {
-    border: 1px solid black;
-    padding: 10px;
-}
+        .room-details {
+            flex: 1; /* Allow details to grow and shrink */
+            min-width: 300px; /* Ensure minimum width for the details */
+            padding: 20px;
+        }
 
-.carousel-caption h5 {
-    font-size: 2.5rem; /* Increased text size */
-    font-weight: bold;
-}
+        .room-details h2 {
+            font-size: 1.8rem;
+        }
 
-.carousel-caption p {
-    font-size: 1.5rem;
-}
+        .room-details ul {
+            padding: 0;
+            list-style-type: none;
+        }
 
-/* Room Container Styles */
-.room-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    padding: 30px;
-    background-color: #a39688;
-}
+        .room-details ul li {
+            margin: 5px 0;
+        }
 
-.room-details {
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px;
-    background-color:aliceblue;
-    padding: 20px;
-}
+        .room-details .learn-more-button {
+            background-color: #a39688;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+        }
 
-.room-details h2 {
-    font-size: 1.8rem;
-}
+        .room-details .learn-more-button:hover {
+            background-color: #74675a;
+        }
 
-.room-details ul {
-    padding: 0;
-    list-style-type: none;
-}
+        .room-images {
+            flex: 1;
+            text-align: center;
+            min-width: 300px;
+            max-width: 500px;
+        }
 
-.room-details ul li {
-    margin: 5px 0;
-}
+        .room-image img{
+            width: 520px;
+            height: 560px;
+        }
+        .thumbnail-images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
 
-.room-details .check-availability {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        .thumbnail-images img {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        hr {
+            border: none; /* Remove default border */
+            border-radius: 50px;
+            border-top: 3px solid #a39688;/* Add a subtle gray line */
+            margin: 30px 0; /* Add some space above and below */
+            margin-left: 90px;
+            margin-right: 90px;
+            }
 
-.room-details .check-availability:hover {
-    background-color: #45a049;
-}
+        .rates-section {
+            text-align: center;
+            padding: 30px 20px;
+        }
 
-.room-images {
-    flex: 1;
-    text-align: center;
-    min-width: 300px;
-    max-width: 500px;
-}
+        .rates-section h2 {
+            font-weight: bold;
+        }
 
-.room-images img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
-}
+        .rates-table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
 
-.thumbnail-images {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-}
+        .rates-table th,
+        .rates-table td {
+            border: 1px solid black;
+            padding: 10px;
+        }
 
-.thumbnail-images img {
-    width: 60px;
-    height: 60px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .rates-table {
+                width: 100%;
+                font-size: 14px;
+            }
 
-.view-more {
-    display: block;
-    margin-top: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #4CAF50;
-}
-.superior-b-container {
-    display: flex;
-    flex-direction: column;
-    background: #f5f5f5;
-    padding: 20px;
-    margin-bottom: 0px;
-}
+            .rates-table th,
+            .rates-table td {
+                padding: 8px;
+            }
+            .room-container {
+                flex-direction: column; /* Stack image and details vertically */
+            }
+        }
 
-.superior-b-room {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 1100px; /* Match width of Superior A */
-    margin: 0 auto; /* Center align */
-}
-
-.superior-b-image {
-    flex: 1;
-    max-width: 400px;
-}
-
-.superior-b-image img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.superior-b-details {
-    flex: 2;
-    padding: 20px;
-    min-width: 300px;
-    max-width: 500px;
-    background-color:  #a39688;
-    margin-left: 0px;
-}
-
-.superior-b-details h2 {
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.superior-b-occupancy {
-    color: green;
-    font-weight: bold;
-}
-
-.superior-b-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    list-style: none;
-    padding: 0;
-}
-
-.superior-b-features li {
-    width: 48%;
-}
-
-.superior-b-btn {
-    display: inline-block;
-    background: green;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.superior-b-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-    max-width: 1100px;
-    margin: 20px auto;
-}
-
-.superior-b-gallery img {
-    width: 100px;
-    height: auto;
-    border-radius: 5px;
-}
-
-
-
+        @media (max-width: 480px) {
+            .rates-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="top-bar">
         <div class="contact-info">
-            <img src="phone-icon.png" alt="Phone Icon" class="icon"> <a href="tel:+63277557888">+63 905 437-3231</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="phone-icon.png" alt="Phone Icon" class="icon"> <a href="tel:+63277557888">+63 905 437-3231</a>
             <img src="email-icon.png" alt="Email Icon" class="icon"> <a href="mailto:mjjq.com">mjjqtransient@gmail.com</a>
         </div>
     </div>
-    
+
     <div class="navbar-wrapper">
-      <nav class="navbar" id="navbar">
-        <div class="nav-container">
-          <div class="logo">
-            <a href="MAIN_PAGE.html"><img src="logo.png" alt="MJJQ Logo"></a>
-          </div>
-          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-          <ul class="nav-links">
-            <li><a href="aboutUs.html">About Us</a></li>
-            <li class="dropdown-parent">
-              <a href="ROOMS_RATES_PAGE.html" class="dropdown-toggle" onclick="toggleDropdown(this)">
-                Rooms & Rates <span class="arrow"></span>
-              </a>
-              <div class="dropdown">
-                <a href="Room1.html">Room 1</a>
-                <a href="Room2.html">Room 2</a>
-                <a href="Room3.html">Room 3</a>
-                <a href="Room4.html">Room 4</a>
-              </div>
-            </li>
-            <li><a href="LOCATION_PAGE.html">Location</a></li>
-            <li><a href="CONTACT_RESERVATION.html">Contact Us</a></li>
-            <li><a href="REVIEWS_PAGE.html">Reviews</a></li>
-            <li><a href="BLOG_TRAVEL_TIPS.html">Blog</a></li>
-            <li><a href="DISCOUNTS_PAGE.html">Offers</a></li>
-            <li><a href="SUPPORT_PAGE.html">FAQs</a></li>
-            <li><a href="CONTACT_RESERVATION.html" class="book-now">BOOK NOW</a></li>
-          </ul>
-        </div>
-      </nav>
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="MAIN_PAGE.html"><img src="logo.png" alt="MJJQ Logo"></a>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                <ul class="nav-links">
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li class="dropdown-parent">
+                        <a href="ROOMS_RATES_PAGE.html" class="dropdown-toggle" onclick="toggleDropdown(this)">
+                            Rooms & Rates <span class="arrow"></span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="Room1.html">Room 1</a>
+                            <a href="Room2.html">Room 2</a>
+                            <a href="Room3.html">Room 3</a>
+                            <a href="Room4.html">Room 4</a>
+                        </div>
+                    </li>
+                    <li><a href="LOCATION_PAGE.html">Location</a></li>
+                    <li><a href="CONTACT_RESERVATION.html">Contact Us</a></li>
+                    <li><a href="REVIEWS_PAGE.html">Reviews</a></li>
+                    <li><a href="BLOG_TRAVEL_TIPS.html">Blog</a></li>
+                    <li><a href="DISCOUNTS_PAGE.html">Offers</a></li>
+                    <li><a href="SUPPORT_PAGE.html">FAQs</a></li>
+                    <li><a href="CONTACT_RESERVATION.html" class="book-now">BOOK NOW</a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
-    <div id="roomCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div id="roomCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style="margin-top: -100px;">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#roomCarousel" data-bs-slide-to="0" class="active"></button>
             <button type="button" data-bs-target="#roomCarousel" data-bs-slide-to="1"></button>
@@ -313,47 +247,45 @@ h4 {
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-    <img src="room1/room1pic1.jpg" class="d-block w-100" alt="Room 1">
-    <div class="carousel-caption d-none d-md-block">
-        <div>
-            <h5>Luxury Suite</h5>
-            <p>Experience elegance and comfort in our luxury suite.</p>
-        </div>
-        <a href="Room1.html" class="btn btn-primary">View Room</a>
-    </div>
-</div>
-<div class="carousel-item">
-    <img src="room2/room2pic7.jpg" class="d-block w-100" alt="Room 2">
-    <div class="carousel-caption d-none d-md-block">
-        <div>
-            <h5>Deluxe Room</h5>
-            <p>Perfect for a cozy and relaxing stay.</p>
-        </div>
-        <a href="Room2.html" class="btn btn-primary">View Room</a>
-    </div>
-</div>
-<div class="carousel-item">
-    <img src="room3/room3pic1.jpg" class="d-block w-100" alt="Room 3">
-    <div class="carousel-caption d-none d-md-block">
-        <div>
-            <h5>Family Room</h5>
-            <p>Spacious and comfortable for the whole family.</p>
-        </div>
-        <a href="Room3.html" class="btn btn-primary">View Room</a>
-    </div>
-</div>
-<div class="carousel-item">
-    <img src="room4/room4pic4.jpeg" class="d-block w-100" alt="Room 4">
-    <div class="carousel-caption d-none d-md-block">
-        <div>
-            <h5>Budget Room</h5>
-            <p>Affordable yet comfortable accommodation.</p>
-        </div>
-        <a href="Room4.html" class="btn btn-primary">View Room</a>
-    </div>
-</div>
-
-            
+                <img src="room1/room1pic1.jpg" class="d-block w-100" alt="Room 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <div>
+                        <h5>Room 1</h5>
+                        <p>Experience elegance and comfort in our Room 1.</p>
+                    </div>
+                    <a href="Room1.html" class="btn btn-secondary">View Room</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="room2/room2pic7.jpg" class="d-block w-100" alt="Room 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <div>
+                        <h5>Room 2</h5>
+                        <p>Perfect for a cozy and relaxing stay.</p>
+                    </div>
+                    <a href="Room2.html" class="btn btn-secondary">View Room</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="room3/room3pic1.jpg" class="d-block w-100" alt="Room 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <div>
+                        <h5>Room 3</h5>
+                        <p>Spacious and comfortable for the whole family.</p>
+                    </div>
+                    <a href="Room3.html" class="btn btn-secondary">View Room</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="room4/room4pic4.jpeg" class="d-block w-100" alt="Room 4">
+                <div class="carousel-caption d-none d-md-block">
+                    <div>
+                        <h5>Room 4</h5>
+                        <p>Affordable yet comfortable accommodation.</p>
+                    </div>
+                    <a href="Room4.html" class="btn btn-secondary">View Room</a>
+                </div>
+            </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -382,130 +314,76 @@ h4 {
             </div>
         </div>
     </section>
+
     <div class="room-container">
+        <div class="room-image">
+            <img src="room1/room1pic1.jpg" alt="Room 1">
+        </div>
         <div class="room-details">
-            <h2>SUPERIOR A</h2>
-            <p class="max-occupancy">Max Occupancy: 4</p>
-            <p>All Superior A rooms are 21 sqm (226 sqft) with balcony that can comfortably accommodate 2 adults...</p>
-            <ul>
-                <li>220-240 volt circuits</li>
-                <li>Air-conditioning</li>
-                <li>Microwave</li>
-                <li>Water Kettle</li>
-                <li>Private Toilet and Shower</li>
-            </ul>
-            <button class="check-availability">CHECK AVAILABILITY</button>
-        </div>
-        <div class="room-images">
-            <img src="main_room_image.jpg" alt="Superior A Room" class="main-image">
-            <div class="thumbnail-images">
-                <img src="thumbnail1.jpg" alt="Thumbnail 1">
-                <img src="thumbnail2.jpg" alt="Thumbnail 2">
-                <img src="thumbnail3.jpg" alt="Thumbnail 3">
-                <img src="thumbnail4.jpg" alt="Thumbnail 4">
-            </div>
-            <a href="#" class="view-more">View more</a>
+            <h2>ROOM 1</h2>
+            <p><strong>Room Details</strong></p>
+            <p>269 sq ft / 25 sq m</p>
+            <p>1 Queen sized bed</p>
+            <p>With bathtub</p>
+            <p>Smoking / non-smoking available</p>
+            <p>3 persons (maximum occupancy) - 2 adults and 1 kid</p>
+            <p>No view</p>
+            <a href="Room1.html" class="learn-more-button">LEARN MORE</a>
         </div>
     </div>
-</section>
-<section class="superior-b-container">
-    <div class="superior-b-room">
-        <div class="superior-b-image">
-            <img src="superior-b-main.jpg" alt="Superior B Room">
+    <hr>
+    <div class="room-container">
+        <div class="room-image">
+            <img src="room2/room2pic1.jpg" alt="Room 2">
         </div>
-        <div class="superior-b-details">
-            <h2>SUPERIOR B</h2>
-            <p class="superior-b-occupancy"><em>Max Occupancy: 3</em></p>
-            <p>
-                All Superior B rooms are 13 sqm (140 sqft) with a balcony that can comfortably accommodate 2 adults, with free high-speed WiFi, air conditioning, private bath and shower, full pantry (incl. microwave, fridge, and kettle), SmartTV and MXQ box, and more. Enjoy watching Netflix, Youtube, etc. in the privacy of your own room. We regularly disinfect the rooms by fogging and using disinfecting detergents.
-            </p>
-            <ul class="superior-b-features">
-                <li>220–240 volt circuits</li>
-                <li>Air-conditioning</li>
-                <li>Microwave</li>
-                <li>Water Kettle</li>
-                <li>Pantry – cutlery, cups, and plates</li>
-                <li>Private Toilet and Shower</li>
-                <li>Slippers</li>
-                <li>Ceiling fan</li>
-                <li>Wireless internet (WiFi)</li>
-                <li>Hot and Cold Shower</li>
-                <li>Personal Fridge</li>
-                <li>SmartTV and MXQ box</li>
-            </ul>
-            <a href="#" class="superior-b-btn">CHECK AVAILABILITY</a>
+        <div class="room-details">
+            <h2>ROOM 2</h2>
+            <p><strong>Room Details</strong></p>
+            <p>269 sq ft / 25 sq m</p>
+            <p>1 Queen sized bed</p>
+            <p>With bathtub</p>
+            <p>Smoking / non-smoking available</p>
+            <p>3 persons (maximum occupancy) - 2 adults and 1 kid</p>
+            <p>No view</p>
+            <a href="Room2.html" class="learn-more-button">LEARN MORE</a>
         </div>
     </div>
-    <div class="superior-b-gallery">
-        <img src="superior-b-1.jpg" alt="Superior B Room 1">
-        <img src="superior-b-2.jpg" alt="Superior B Room 2">
-        <img src="superior-b-3.jpg" alt="Superior B Room 3">
-        <img src="superior-b-4.jpg" alt="Superior B Room 4">
-    </div>
-</section>
-<div class="room-container">
-    <div class="room-details">
-        <h2>SUPERIOR A</h2>
-        <p class="max-occupancy">Max Occupancy: 4</p>
-        <p>All Superior A rooms are 21 sqm (226 sqft) with balcony that can comfortably accommodate 2 adults...</p>
-        <ul>
-            <li>220-240 volt circuits</li>
-            <li>Air-conditioning</li>
-            <li>Microwave</li>
-            <li>Water Kettle</li>
-            <li>Private Toilet and Shower</li>
-        </ul>
-        <button class="check-availability">CHECK AVAILABILITY</button>
-    </div>
-    <div class="room-images">
-        <img src="main_room_image.jpg" alt="Superior A Room" class="main-image">
-        <div class="thumbnail-images">
-            <img src="thumbnail1.jpg" alt="Thumbnail 1">
-            <img src="thumbnail2.jpg" alt="Thumbnail 2">
-            <img src="thumbnail3.jpg" alt="Thumbnail 3">
-            <img src="thumbnail4.jpg" alt="Thumbnail 4">
+    <hr>
+    <div class="room-container">
+        <div class="room-image">
+            <img src="room3/room3pic1.jpg" alt="Room 3">
         </div>
-        <a href="#" class="view-more">View more</a>
-    </div>
-</div>
-<section class="superior-b-container">
-    <div class="superior-b-room">
-        <div class="superior-b-image">
-            <img src="superior-b-main.jpg" alt="Superior B Room">
-        </div>
-        <div class="superior-b-details">
-            <h2>SUPERIOR B</h2>
-            <p class="superior-b-occupancy"><em>Max Occupancy: 3</em></p>
-            <p>
-                All Superior B rooms are 13 sqm (140 sqft) with a balcony that can comfortably accommodate 2 adults, with free high-speed WiFi, air conditioning, private bath and shower, full pantry (incl. microwave, fridge, and kettle), SmartTV and MXQ box, and more. Enjoy watching Netflix, Youtube, etc. in the privacy of your own room. We regularly disinfect the rooms by fogging and using disinfecting detergents.
-            </p>
-            <ul class="superior-b-features">
-                <li>220–240 volt circuits</li>
-                <li>Air-conditioning</li>
-                <li>Microwave</li>
-                <li>Water Kettle</li>
-                <li>Pantry – cutlery, cups, and plates</li>
-                <li>Private Toilet and Shower</li>
-                <li>Slippers</li>
-                <li>Ceiling fan</li>
-                <li>Wireless internet (WiFi)</li>
-                <li>Hot and Cold Shower</li>
-                <li>Personal Fridge</li>
-                <li>SmartTV and MXQ box</li>
-            </ul>
-            <a href="#" class="superior-b-btn">CHECK AVAILABILITY</a>
+        <div class="room-details">
+            <h2>ROOM 3</h2>
+            <p><strong>Room Details</strong></p>
+            <p>269 sq ft / 25 sq m</p>
+            <p>1 Queen sized bed</p>
+            <p>With bathtub</p>
+            <p>Smoking / non-smoking available</p>
+            <p>3 persons (maximum occupancy) - 2 adults and 1 kid</p>
+            <p>No view</p>
+            <a href="Room3.html" class="learn-more-button">LEARN MORE</a>
         </div>
     </div>
-    <div class="superior-b-gallery">
-        <img src="superior-b-1.jpg" alt="Superior B Room 1">
-        <img src="superior-b-2.jpg" alt="Superior B Room 2">
-        <img src="superior-b-3.jpg" alt="Superior B Room 3">
-        <img src="superior-b-4.jpg" alt="Superior B Room 4">
+    <hr>
+    <div class="room-container">
+        <div class="room-image">
+            <img src="room4/room4pic4.jpeg" alt="Room 4">
+        </div>
+        <div class="room-details">
+            <h2>ROOM 4</h2>
+            <p><strong>Room Details</strong></p>
+            <p>269 sq ft / 25 sq m</p>
+            <p>1 Queen sized bed</p>
+            <p>With bathtub</p>
+            <p>Smoking / non-smoking available</p>
+            <p>3 persons (maximum occupancy) - 2 adults and 1 kid</p>
+            <p>No view</p>
+            <a href="Room4.html" class="learn-more-button">LEARN MORE</a>
+        </div>
     </div>
-</section>
-</section>
-
-
+    <hr>
+    
 
     <section class="rates-section">
         <h2>ROOM RATES</h2>
@@ -536,33 +414,34 @@ h4 {
             </tr>
         </table>
     </section>
+
     <footer style="background-color: #000; color: #fff; padding: 30px; padding-top: 35px; padding-bottom: 5px;">
         <div style="position: relative; top: -20px;">
-          <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; text-align: center;">
-            <div style="flex: 1; min-width: 250px;">
-              <img src="logo2.png" alt="MJJQ Logo" style="max-width: 120px;">
-              <p style="margin-top: 10px;">Comfort and warmth, just like home</p>
+            <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; text-align: center;">
+                <div style="flex: 1; min-width: 250px;">
+                    <img src="logo2.png" alt="MJJQ Logo" style="max-width: 120px;">
+                    <p style="margin-top: 10px;">Comfort and warmth, just like home</p>
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <h3 style="font-size: 18px; margin-bottom: 10px;"><b>LOCATION</b></h3>
+                    <p>Barangay Militar, Fort Magsaysay, <br> Palayan City, Philippines</p>
+                    <div>
+                        <a href="mailto:mjjqtransient@gmail.com" style="margin-right: 11.5px;"><img src="email-icon.png" alt="Email" width="30" height="28"></a>
+                        <a href="https://www.facebook.com/share/1BPRxd3VGk/" style="margin-right: 10px;"><img src="facebook-icon.png" alt="Facebook" width="24"></a>
+                        <a href="https://maps.app.goo.gl/PQ18yqTUHaU5JnnA6"><img src="location-icon.png" alt="Google" width="24"></a>
+                    </div>
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <h3 style="font-size: 18px; margin-bottom: 10px;"><b>CONTACT US</b></h3>
+                    <p><strong>Phone:</strong> +63 918 264-5515</p>
+                    <p><strong>Email:</strong> mjjqtransient@gmail.com</p>
+                    <a href="CONTACT_RESERVATION.html" style="display: inline-block; background-color: #a39688; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px;">BOOK ONLINE</a>
+                </div>
             </div>
-            <div style="flex: 1; min-width: 250px;">
-              <h3 style="font-size: 18px; margin-bottom: 10px;"><b>LOCATION</b></h3>
-              <p>Barangay Militar, Fort Magsaysay, <br> Palayan City, Philippines</p>
-              <div>
-                <a href="mailto:mjjqtransient@gmail.com" style="margin-right: 11.5px;"><img src="email-icon.png" alt="Email" width="30" height="28"></a>
-                <a href="https://www.facebook.com/share/1BPRxd3VGk/" style="margin-right: 10px;"><img src="facebook-icon.png" alt="Facebook" width="24"></a>
-                <a href="https://maps.app.goo.gl/PQ18yqTUHaU5JnnA6"><img src="location-icon.png" alt="Google" width="24"></a>
-              </div>
-            </div>
-            <div style="flex: 1; min-width: 250px;">
-              <h3 style="font-size: 18px; margin-bottom: 10px;"><b>CONTACT US</b></h3>
-              <p><strong>Phone:</strong> +63 918 264-5515</p>
-              <p><strong>Email:</strong> mjjqtransient@gmail.com</p>
-              <a href="CONTACT_RESERVATION.html" style="display: inline-block; background-color: #a39688; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px;">BOOK ONLINE</a> 
-            </div>
-          </div>
         </div>
         <div style="text-align: center; padding: 5px 0; font-size: 18px; background-color: #000; color: #fff; border-top: 1px solid #444; position: relative;">
-          <p style="margin: 12px 0;">© 2024 MJJQ Transient Room. All rights reserved.</p>
-          <p style="font-size: medium;">Nicole Scarlet G. Cloa, Fiona Hailey L. Maraña, Roelle Aira T. Milar, Jamela Mae S. Quiddam, Mico Angelo C. Tazarte</p>
+            <p style="margin: 12px 0;">© 2024 MJJQ Transient Room. All rights reserved.</p>
+            <p style="font-size: medium;">Nicole Scarlet G. Cloa, Fiona Hailey L. Maraña, Roelle Aira T. Milar, Jamela Mae S. Quiddam, Mico Angelo C. Tazarte</p>
         </div>
     </footer>
     <script>

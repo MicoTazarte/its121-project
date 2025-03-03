@@ -7,133 +7,141 @@
     <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="navbar.css">
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: #a39688;
-    }
-    h4 {
-        margin: 0;
-        background-color: rgb(236, 229, 218);
-    }   
-    .polaroid {
-        width: 80%;
-        background-color: rgb(255, 255, 255);
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        margin-bottom: 25px;
-        transition: transform 0.3s ease-in-out;
-    }
-    .polaroid:hover {
-        transform: scale(1.05);
-    }
-
-
-    .container {
-        text-align: center;
-        padding: 10px 20px;
-    }
-    .caption {
-        padding: 15px;
-        text-align: center;
-    }
-
-                
-</style>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #a39688;
+        }
+        h4 {
+            margin: 0;
+            background-color: rgb(236, 229, 218);
+        }
+        .polaroid {
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+    transition: transform 0.3s ease-in-out;
+    display: block; /* Make the polaroid a block-level element */
+    margin-left: auto;  /* Center horizontally within its column */
+    margin-right: auto; /* Center horizontally within its column */
+}
+        .polaroid:hover {
+            transform: scale(1.05);
+        }
+        .container {
+            text-align: center;
+            padding: 10px 20px;
+        }
+        .caption {
+            padding: 15px;
+            text-align: center;
+        }
+        /* Additional CSS for centering images in polaroid */
+        .polaroid img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
-  <div class="top-bar">
-    <div class="contact-info">
-        <img src="phone-icon.png" alt="Phone Icon" class="icon"> <a href="tel:+63277557888">+63 905 437-3231</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img src="email-icon.png" alt="Email Icon" class="icon"> <a href="mailto:mjjq.com">mjjqtransient@gmail.com</a>
-    </div>
-</div>
-
-  <div class="navbar-wrapper">
-    <nav class="navbar" id="navbar">
-      <div class="nav-container">
-        <div class="logo">
-          <a href="MAIN_PAGE.html"><img src="logo.png" alt="MJJQ Logo"></a>
+    <div class="top-bar">
+        <div class="contact-info">
+            <img src="phone-icon.png" alt="Phone Icon" class="icon"> <a href="tel:+63277557888">+63 905 437-3231</a>        
+            <img src="email-icon.png" alt="Email Icon" class="icon"> <a href="mailto:mjjq.com">mjjqtransient@gmail.com</a>
         </div>
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-        <ul class="nav-links">
-          <li><a href="aboutUs.html">About Us</a></li>
-          <li class="dropdown-parent">
-            <a href="ROOMS_RATES_PAGE.html" class="dropdown-toggle" onclick="toggleDropdown(this)">
-              Rooms & Rates <span class="arrow"></span>
-            </a>
-            <div class="dropdown">
-              <a href="Room1.html">Room 1</a>
-              <a href="Room2.html">Room 2</a>
-              <a href="Room3.html">Room 3</a>
-              <a href="Room4.html">Room 4</a>
+    </div>
+
+    <div class="navbar-wrapper">
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="MAIN_PAGE.html"><img src="logo.png" alt="MJJQ Logo"></a>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                <ul class="nav-links">
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li class="dropdown-parent">
+                        <a href="ROOMS_RATES_PAGE.html" class="dropdown-toggle" onclick="toggleDropdown(this)">
+                            Rooms & Rates <span class="arrow"></span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="Room1.html">Room 1</a>
+                            <a href="Room2.html">Room 2</a>
+                            <a href="Room3.html">Room 3</a>
+                            <a href="Room4.html">Room 4</a>
+                        </div>
+                    </li>
+                    <li><a href="LOCATION_PAGE.html">Location</a></li>
+                    <li><a href="CONTACT_RESERVATION.html">Contact Us</a></li>
+                    <li><a href="REVIEWS_PAGE.html">Reviews</a></li>
+                    <li><a href="BLOG_TRAVEL_TIPS.html">Blog</a></li>
+                    <li><a href="DISCOUNTS_PAGE.html">Offers</a></li>
+                    <li><a href="SUPPORT_PAGE.html">FAQs</a></li>
+                    <li><a href="CONTACT_RESERVATION.html" class="book-now">BOOK NOW</a></li>
+                </ul>
             </div>
-          </li>
-          <li><a href="LOCATION_PAGE.html">Location</a></li>
-          <li><a href="CONTACT_RESERVATION.html">Contact Us</a></li>
-          <li><a href="REVIEWS_PAGE.html">Reviews</a></li>
-          <li><a href="BLOG_TRAVEL_TIPS.html">Blog</a></li>
-          <li><a href="DISCOUNTS_PAGE.html">Offers</a></li>
-          <li><a href="SUPPORT_PAGE.html">FAQs</a></li>
-          <li><a href="CONTACT_RESERVATION.html" class="book-now">BOOK NOW</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-    
+        </nav>
+    </div>
+
     <br><br><br><br>
     <h3 style="text-align:center;font-family: Arial"><b>Hidden Gems Await – Explore Beyond the Stay!</b></h3>
     <br>
 
     <div class="container">
         <div class="row">
-          <div class="col-md-4">
-            <div class="polaroid">
-              <a href="minalungao.jpg" target="_blank">
-                <img src="minalungao.jpg" alt="minalungao" style="width:100%;padding: 5px;"></a>
-                <div class="caption">
-                  <h6>Minalungao National Park</h6>
-                  <p>is a protected area of the Philippines located in the municipality
-                    of General Tinio, Nueva Ecija, near its Boundary with Doña Remedios
-                    Trinidad, Bulacan. The park covers an area of 2,018 hectares 
-                    centered along the scenic Peñaranda River bordered on both sides 
-                    by up to 16-meter high limestone walls in the foothills of the
-                    Sierra Madre mountain range.</p>
+            <div class="col-md-4">
+                <div class="polaroid">
+                    <a href="minalungao.jpg" target="_blank">
+                        <img src="minalungao.jpg" alt="minalungao" style="width:100%;padding: 5px;">
+                    </a>
+                    <div class="caption">
+                        <h6>Minalungao National Park</h6>
+                        <p>is a protected area of the Philippines located in the municipality
+                            of General Tinio, Nueva Ecija, near its Boundary with Doña Remedios
+                            Trinidad, Bulacan. The park covers an area of 2,018 hectares 
+                            centered along the scenic Peñaranda River bordered on both sides 
+                            by up to 16-meter high limestone walls in the foothills of the
+                            Sierra Madre mountain range.</p>
+                    </div>
                 </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="polaroid">
-              <a href="fort magsaysay base.jpg" target="_blank">
-                <img src="fort magsaysay base.jpg" alt="fort magsaysay" style="width:100%;padding: 5px"></a>
-                <div class="caption">
-                  <h6>Fort Ramon Magsaysay Military Camp</h6>
-                  <p>is the largest military reservation in the Philippines,
-                    and is a key training area of the Armed Forces of the Philippines. 
-                    Fort Magsaysay straddles the provinces of Nueva Ecija and Aurora, 
-                    encompassing Palayan City, Sta. Rosa, Gen. Tinio, Laur, and Dingalan.</p>
+            <div class="col-md-4">
+                <div class="polaroid">
+                    <a href="fort magsaysay base.jpg" target="_blank">
+                        <img src="fort magsaysay base.jpg" alt="fort magsaysay" style="width:100%;padding: 5px;">
+                    </a>
+                    <div class="caption">
+                        <h6>Fort Ramon Magsaysay Military Camp</h6>
+                        <p>is the largest military reservation in the Philippines,
+                            and is a key training area of the Armed Forces of the Philippines. 
+                            Fort Magsaysay straddles the provinces of Nueva Ecija and Aurora, 
+                            encompassing Palayan City, Sta. Rosa, Gen. Tinio, Laur, and Dingalan.</p>
+                    </div>
                 </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="polaroid">
-              <a href="pahingahan dam.jpg" target="_blank">
-                <img src="pahingahan dam.jpg" alt="pahingahan dam" style="width:100%;padding: 5px;"></a>
-                <div class="caption">
-                  <h6>Pahingahan Dam</h6>
-                  <p>This man made water reservoir located inside the Fort Magsaysay, 
-                    serves as the relaxation place of our soldiers from the pressure 
-                    in their line of work.
-                    They say that by staring at any body of water can relax your body
-                    and mind. So it’s very effective to relax here.
-                    Another thing, If there is reservoir there is falls. 
-                    Who wouldn’t want to go to the falls right? Go for a swim 
-                    and jump from it’s peak to the lagoon.</p>
+            <div class="col-md-4">
+                <div class="polaroid">
+                    <a href="pahingahan dam.jpg" target="_blank">
+                        <img src="pahingahan dam.jpg" alt="pahingahan dam" style="width:100%;padding: 5px;">
+                    </a>
+                    <div class="caption">
+                        <h6>Pahingahan Dam</h6>
+                        <p>This man made water reservoir located inside the Fort Magsaysay, 
+                            serves as the relaxation place of our soldiers from the pressure 
+                            in their line of work.
+                            They say that by staring at any body of water can relax your body
+                            and mind. So it’s very effective to relax here.
+                            Another thing, If there is reservoir there is falls. 
+                            Who wouldn’t want to go to the falls right? Go for a swim 
+                            and jump from it’s peak to the lagoon.</p>
+                    </div>
                 </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 
       <footer style="background-color: #000; color: #fff; padding: 30px; padding-top: 35px; padding-bottom: 5px;">
         <div style="position: relative; top: -20px;">

@@ -35,7 +35,7 @@
     
         .carousel-inner img {
             width: 100%;
-            height: 500px; /* Reduced height */
+            height: 580px; /* Reduced height */
             object-fit: cover; /* Ensures images remain properly scaled */
         }
 
@@ -101,7 +101,14 @@
     font-size: 16px;
     font-weight: bold;
     color: #7A5725;
-    text-decoration: underline;
+    text-decoration: none;
+    background-color: #c7b9aa;
+    border-radius: 10px;
+    padding: 5px;
+}
+.view-room:hover{
+    background-color: #5a4202;
+    color: white;
 }
 
     </style>
@@ -122,7 +129,7 @@
           </div>
           <button class="menu-toggle" onclick="toggleMenu()">☰</button>
           <ul class="nav-links">
-            <li><a href="#">About Us</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
             <li class="dropdown-parent">
               <a href="ROOMS_RATES_PAGE.html" class="dropdown-toggle" onclick="toggleDropdown(this)">
                 Rooms & Rates <span class="arrow"></span>
@@ -145,7 +152,7 @@
         </div>
       </nav>
     </div>
-    <div id="roomCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="roomCarousel" class="carousel slide" data-bs-ride="carousel" style="margin-top: -100px;">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#roomCarousel" data-bs-slide-to="0" class="active"></button>
             <button type="button" data-bs-target="#roomCarousel" data-bs-slide-to="1"></button>
@@ -208,28 +215,29 @@
         </div>
     </section>
     <section class="other-rooms">
-      <h2>Other Rooms & Suites</h2>
-      <div class="rooms-container">
-          <div class="room-card">
-              <img src="classic-studio.jpg" alt="Classic Studio">
-              <h3>Classic Studio</h3>
-              <p>An enchanting and intimate space designed with your utmost comfort in mind.</p>
-              <a href="aboutUs.html" class="view-room">View Room</a>
-          </div>
-          <div class="room-card">
-              <img src="executive-prestige.jpg" alt="Executive Prestige">
-              <h3>Executive Prestige</h3>
-              <p>The option caters to discerning travelers who require a spacious abode for meetings or...</p>
-              <a href="#" class="view-room">View Room</a>
-          </div>
-          <div class="room-card">
-              <img src="executive-suite.jpg" alt="2-Bedroom Executive Suite">
-              <h3>2-Bedroom Executive Suite</h3>
-              <p>Live, work, and play in our largest offering with 100 sqm of luxury and a panoramic view.</p>
-              <a href="#" class="view-room">View Room</a>
-          </div>
-      </div>
-  </section>
+        <h2>Other Rooms </h2>
+        <div class="rooms-container">
+            <div class="room-card">
+                <img src="/room1/room1pic1.jpg" alt="Room 1">
+                <h3>Room 1</h3>
+                <p>An enchanting and intimate space designed with your utmost comfort in mind.</p>
+                <a href="Room1.html" class="view-room">View Room</a>
+            </div>
+            <div class="room-card">
+                <img src="/room2/room2pic5.jpg" alt="Room 3">
+                <h3>Room 2</h3>
+                <p>The option caters to discerning travelers who require a spacious abode for meetings or...</p>
+                <a href="Room2.html" class="view-room">View Room</a>
+            </div>
+            <div class="room-card">
+                <img src="/room3/room3pic7.jpg" alt="Room 4">
+                <h3>Room 3</h3>
+                <p>Live, work, and play in our largest offering with 100 sqm of luxury and a panoramic view.</p>
+                <a href="Room3.html" class="view-room">View Room</a>
+            </div>
+        </div>
+    </section>
+    <br>
   
   <footer style="background-color: #000; color: #fff; padding: 30px; padding-top: 35px; padding-bottom: 5px;">
     <div style="position: relative; top: -20px;">

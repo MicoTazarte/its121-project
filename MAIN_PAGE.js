@@ -101,3 +101,34 @@ document.addEventListener("keydown", function (event) {
     }
   }
 });
+   const roomImages = [
+      "room1.jpg",
+      "room2.jpg",
+      "room3.jpg",
+      "room4.jpg"
+    ];
+
+    const roomDetails = [
+      "355 sq ft / 33 sq m \n 1 Queen sized bed \n With bathtub \n Smoking / non-smoking available \n 4 persons (maximum occupancy) - 2 adults and 2 kids \n City view",
+      "Details about Room 2...",
+      "Details about Room 3...",
+      "Details about Room 4..."
+    ];
+
+    let currentRoom = 0;
+
+    function changeRoom(direction) {
+      currentRoom = (currentRoom + direction + roomImages.length) % roomImages.length;
+      updateRoom();
+    }
+
+    function updateRoom() {
+      const roomImage = document.querySelector(".room-img");
+      const roomTitle = document.querySelector(".room-details h2");
+      const roomDetail = document.getElementById("room-details-text");
+
+      roomImage.src = roomImages[currentRoom];
+      roomImage.alt = "Room " + (currentRoom + 1);
+      roomTitle.textContent = "Room " + (currentRoom + 1); // Update title dynamically
+      roomDetail.textContent = roomDetails[currentRoom];
+    }

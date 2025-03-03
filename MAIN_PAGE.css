@@ -143,6 +143,7 @@ body {
 
 .nav-links li a.book-now:hover {
   background-color: #c6b09c;
+  color: rgb(255, 255, 255);
   transform: translateY(-5px);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -254,17 +255,49 @@ body {
   z-index: 1;
   max-width: 90%;
 }
-@keyframes wave {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(3deg); }
-  100% { transform: rotate(0deg); }
+.container {
+  width: 80%;
+  max-width: 800px;
+  margin: 100px auto; /* Adjust top margin as needed */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+h1 {
+  font-size: 2.5em;
+  color: #a39688; /* Gold color from the image */
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 2px solid #a39688;
+  color: #A39688;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: #A39688;
+  color: white;
 }
 
 .room {
   font-family: "Shrikhand", serif;
-  font-size: 70px;
+  color: white;
+  font-size: 60px;
   text-shadow: 4px 4px 10px rgb(0, 0, 0); /* Adds a shadow effect */
 }
+
 
 .facebook-section {
   display: flex;
