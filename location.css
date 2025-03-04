@@ -12,7 +12,7 @@ body {
   align-items: center;
   justify-content: center;
   color: #fff;
-  text-align: center;
+  text-align: left;
   position: relative;
 }
 
@@ -29,6 +29,13 @@ body {
   position: relative;
   z-index: 1;
   max-width: 90%;
+}
+
+.room {
+  font-family: "Shrikhand", serif;
+  color: white;
+  font-size: 60px;
+  text-shadow: 4px 4px 10px rgb(0, 0, 0); /* Adds a shadow effect */
 }
 
 /* Media Queries for Responsiveness */
