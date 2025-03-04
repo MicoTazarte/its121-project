@@ -44,7 +44,7 @@ body {
   .room {
     font-family: "Shrikhand", serif;
     color: white;
-    font-size: 70px;
+    font-size: 40px;
     text-shadow: 4px 4px 10px rgb(0, 0, 0); /* Adds a shadow effect */
   }
   
