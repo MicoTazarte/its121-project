@@ -32,6 +32,15 @@ body {
   text-align: center; /* Center text within hero content */
 }
 
+.about-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 100px auto; /* Adjust top margin as needed */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
 .room {
   font-family: "Shrikhand", serif;
   color: white;

@@ -16,6 +16,15 @@ body {
   position: relative;
 }
 
+.location-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 100px auto; /* Adjust top margin as needed */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -38,6 +47,7 @@ body {
   font-size: 70px;
   text-shadow: 4px 4px 10px rgb(0, 0, 0); /* Adds a shadow effect */
 }
+
 
 /* Media Queries for Responsiveness */
 
