@@ -52,7 +52,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; 
-    height: 50vh;
+    height: 100vh;
 }
 
 #floorplan-title {
@@ -61,14 +61,6 @@ body {
     margin-left: 250px;
     margin-right: 250px;
     margin-bottom: 10px;
-}
-
-.floorplan-text {
-    display: grid;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 250px;
-    margin-right: 250px;
 }
 
 #floorplan img {
