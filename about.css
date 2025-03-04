@@ -1,18 +1,18 @@
 body {
-  text-align: center; 
-  margin-left: auto; /* Use auto margin for responsiveness */
-  margin-right: auto; /* Use auto margin for responsiveness */
+  margin: 0; /* From previous example */
+  padding: 0; /* From previous example */
+
 }
 
 .hero {
-  height: 450px; 
+  height: 800px;
   background: url('no text.jpg') no-repeat center center/cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #fff;
-  text-align: left;
+  text-align: left; /* You might want to remove this if you want centered text */
   position: relative;
 }
 
@@ -29,38 +29,55 @@ body {
   position: relative;
   z-index: 1;
   max-width: 90%;
+  text-align: center; /* Center text within hero content */
 }
 
 .room {
   font-family: "Shrikhand", serif;
   color: white;
   font-size: 60px;
-  text-shadow: 4px 4px 10px rgb(0, 0, 0); /* Adds a shadow effect */
+  text-shadow: 4px 4px 10px rgb(0, 0, 0);
+  align-items: center;
+}
+.text-content{
+  text-align: center;
+  margin: 30px;
+  margin-right: 100px;
+  margin-left: 100px;
+  padding: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 18px;
+}
+.title{
+  text-align: center;
+  font-size: 40px;
+  font-weight: 30px;
+  margin-top: 30px;
+  color: rgb(143, 127, 108);
 }
 
-
 /* Media Queries for Responsiveness */
-
 @media (max-width: 1200px) {
   .hero {
-      height: 700px; /* Adjust for larger screens */
+      height: 700px;
   }
 }
 
 @media (max-width: 992px) {
   .hero {
-      height: 600px; /* Adjust for medium screens */
+      height: 600px;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-      height: 500px; /* Adjust for smaller screens */
+      height: 500px;
   }
 }
 
 @media (max-width: 576px) {
   .hero {
-      height: 400px; /* Adjust for mobile screens */
+      height: 400px;
   }
 }

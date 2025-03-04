@@ -13,7 +13,7 @@
      margin: 0;
      padding: 0;
      font-family: sans-serif;
-     background-color: #000;
+    background-color: #c6b09c;
     }
 
 .h4 {
@@ -22,13 +22,22 @@
     }
 
 .testimonials-section {
-    padding: 50px 0;
+    padding: 20px 0;
     background-color: #c6b09c;
     text-align: center;
 }
 
+.text-center {
+    text-align: center !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-top: 0;  /* Removed extra top margin */
+    margin-bottom: 15px; /* Adjusted spacing */
+}
+
 .testimonial {
-    background: #000;
+    background: #fff;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -72,20 +81,25 @@
 .testimonial h4 {
     font-size: 20px;
     margin-bottom: 5px;
-    color: #c6b09c;
+    color: #000;
+    background-color: #f5e1d2; 
+    padding: 5px; 
+    border-radius: 5px; 
+    font-weight: bold;
 }
 
 .testimonial p {
     font-size: 16px;
-    color: white;
+    color: #000;
+    font-weight: bold;
 }
 
 .text-center {
     text-align: center !important;
-    font-size: 1.5rem; /* Increase font size */
-    font-weight: bold; /* Make text stand out */
-    color: #000; /* Ensure visibility */
-    margin-bottom: 20px; /* Add spacing */
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    color: #000; 
+    margin-bottom: 20px; 
 }
 
 .testimonial p:nth-of-type(2) {
@@ -96,13 +110,19 @@
 /* Review Form Section */
 .review-form-section {
     background-color: #c6b09c;
-    padding: 50px 0;
+    padding: 30px 0;
     text-align: center;
+
+}
+form{
+    width: 80%;
+    margin: auto;
+
 }
 
 .review-form-section h2 {
     color: #000;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .review-form-container {
@@ -110,21 +130,23 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 200px;
     margin: 0 auto;
 }
 
 .review-form-container .form-group {
     margin-bottom: 15px;
+    text-align: left;
 }
 
 .review-form-container label {
+    display: block;
+    margin-bottom: 15px; 
     color: #fff;
     font-weight: bold;
 }
 
 .review-form-container .form-control {
-    width: 50%;
+    width: 90%;
     margin: 0 auto;
     padding: 8px;
     font-size: 14px;
@@ -132,9 +154,9 @@
 }
 
 .review-form-container textarea {
-    height: 50px;
+    height: 80px;
     resize: none;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .review-form-container button {
@@ -171,6 +193,7 @@ footer a[style*="background-color: #a39688"]:hover {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
   color: white; /* Change text color to white on hover */
 }
+
 </style>
 </head>
 
