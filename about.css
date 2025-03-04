@@ -5,7 +5,7 @@ body {
 }
 
 .hero {
-  height: 800px; 
+  height: 450px; 
   background: url('no text.jpg') no-repeat center center/cover;
   display: flex;
   flex-direction: column;
@@ -31,12 +31,22 @@ body {
   max-width: 90%;
 }
 
+.about-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 100px auto; /* Adjust top margin as needed */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
 .room {
   font-family: "Shrikhand", serif;
   color: white;
   font-size: 60px;
   text-shadow: 4px 4px 10px rgb(0, 0, 0); /* Adds a shadow effect */
 }
+
 
 /* Media Queries for Responsiveness */
 
