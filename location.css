@@ -48,11 +48,6 @@ body {
   text-shadow: 4px 4px 10px rgb(0, 0, 0); /* Adds a shadow effect */
 }
 
-#floorplan img {
-  max-width: 900px;
-  height: 500px; 
-}
-
 #floorplan {
   display: flex;
   justify-content: center;
