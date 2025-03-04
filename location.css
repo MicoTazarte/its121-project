@@ -48,6 +48,11 @@ body {
   text-shadow: 4px 4px 10px rgb(0, 0, 0); /* Adds a shadow effect */
 }
 
+#floorplan img {
+  max-width: 100%;
+  height: auto; 
+}
+
 
 /* Media Queries for Responsiveness */
 
