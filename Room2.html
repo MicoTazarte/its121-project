@@ -8,7 +8,31 @@
     <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="navbar.css">
     <style>
-            
+        .room-info-container {
+        background: #f8f9fa;
+        padding: 50px 0;
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .room-title {
+        font-size: 30px;
+        font-weight: bold;
+        color: #7a5901;
+    }
+    
+    .room-description {
+        font-size: 18px;
+        color: #333;
+        line-height: 1.6;
+    }
+    
+    .room-details li {
+        font-size: 18px;
+        color: #5a4202;
+        margin: 10px 0;
+    }
+    
         .carousel-inner img {
             width: 100%;
             height: 580px; /* Reduced height */
@@ -16,8 +40,8 @@
         }
 
         .carousel-caption {
-            font-size: 14px; 
-            bottom: 10px; 
+            font-size: 14px; /* Adjusted text size */
+            bottom: 10px; /* Moves caption slightly higher */
         }
 
         .carousel-caption h5 {
@@ -27,54 +51,19 @@
         .carousel-caption p {
             font-size: 14px;
         }
-        .room-info {
-            max-width: 800px;
-            margin: 50px auto;
-            text-align: center;
-            color: #5a4202;
-            padding: 20px;
-        }
+        .other-rooms {
+    text-align: center;
+    padding: 50px 20px;
+    background: #fff;
+}
 
-        .room-info h2 {
-            font-size: 28px;
-            font-weight: bold;
-            color: #7a5901;
-            margin-bottom: 15px;
-        }
-
-        .room-description {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333;
-            text-align: justify;
-            margin-top: 15px;
-        }
-
-        .room-highlights {
-            font-weight: bold;
-            font-size: 20px;
-            margin-top: 30px;
-            color: #7a5901;
-            text-align: left;
-        }
-
-        .room-highlights ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .room-highlights li {
-            font-size: 18px;
-            color: #333;
-            margin: 5px 0;
-        }
-        .other-rooms h2 {
-        font-size: 32px;
-        font-weight: bold;
-        color: #7A5725; /* Gold/Brown Shade */
-        margin-bottom: 20px;
-        text-align: center;
-    }
+.other-rooms h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #7A5725; /* Gold/Brown Shade */
+    margin-bottom: 20px;
+    text-align: center;
+}
 
 .rooms-container {
     display: flex;
@@ -132,37 +121,37 @@
             <img src="email-icon.png" alt="Email Icon" class="icon"> <a href="mailto:mjjq.com">mjjqtransient@gmail.com</a>
         </div>
     </div>
-
     <div class="navbar-wrapper">
-        <nav class="navbar" id="navbar">
-            <div class="nav-container">
-                <div class="logo">
-                    <a href="MAIN_PAGE.html"><img src="logo.png" alt="MJJQ Logo"></a>
-                </div>
-                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-                <ul class="nav-links">
-                    <li><a href="aboutUs.html">About Us</a></li>
-                    <li class="dropdown-parent">
-                        <a href="ROOMS_RATES_PAGE.html" class="dropdown-toggle" onclick="toggleDropdown(this)">
-                            Rooms & Rates  </a> <div class="dropdown">
-                            <a href="Room1.html">Room 1</a>
-                            <a href="Room2.html">Room 2</a>
-                            <a href="Room3.html">Room 3</a>
-                            <a href="Room4.html">Room 4</a>
-                        </div>
-                    </li>
-                    <li><a href="LOCATION_PAGE.html">Location</a></li>
-                    <li><a href="CONTACT_RESERVATION.html">Contact Us</a></li>
-                    <li><a href="REVIEWS_PAGE.html">Reviews</a></li>
-                    <li><a href="BLOG_TRAVEL_TIPS.html">Blog</a></li>
-                    <li><a href="DISCOUNTS_PAGE.html">Offers</a></li>
-                    <li><a href="SUPPORT_PAGE.html">FAQs</a></li>
-                    <li><a href="CONTACT_RESERVATION.html" class="book-now">BOOK NOW</a></li>
-                </ul>
-            </div>
-        </nav>
+      <nav class="navbar" id="navbar">
+        <div class="nav-container">
+          <div class="logo">
+            <a href="MAIN_PAGE.html"><img src="logo.png" alt="MJJQ Logo"></a>
+          </div>
+          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+          <ul class="nav-links">
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li class="dropdown-parent">
+              <a href="ROOMS_RATES_PAGE.html" class="dropdown-toggle" onclick="toggleDropdown(this)">
+                Rooms & Rates <span class="arrow"></span>
+              </a>
+              <div class="dropdown">
+                <a href="Room1.html">Room 1</a>
+                <a href="Room2.html">Room 2</a>
+                <a href="Room3.html">Room 3</a>
+                <a href="Room4.html">Room 4</a>
+              </div>
+            </li>
+            <li><a href="LOCATION_PAGE.html">Location</a></li>
+            <li><a href="CONTACT_RESERVATION.html">Contact Us</a></li>
+            <li><a href="REVIEWS_PAGE.html">Reviews</a></li>
+            <li><a href="BLOG_TRAVEL_TIPS.html">Blog</a></li>
+            <li><a href="DISCOUNTS_PAGE.html">Offers</a></li>
+            <li><a href="SUPPORT_PAGE.html">FAQs</a></li>
+            <li><a href="CONTACT_RESERVATION.html" class="book-now">BOOK NOW</a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
-
     <div id="roomCarousel" class="carousel slide" data-bs-ride="carousel" style="margin-top: -100px;">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#roomCarousel" data-bs-slide-to="0" class="active"></button>
@@ -173,8 +162,8 @@
             <div class="carousel-item active">
                 <img src="room2/room2pic1.jpg" class="d-block w-100" alt="Room Image 1">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Luxury Suite</h5>
-                    <p>Experience elegance and comfort in our luxury suite.</p>
+                    <h5>Comfortable Experience</h5>
+                    <p>Experience comfort in our homey hotel.</p>
                 </div>
             </div>
             <div class="carousel-item">
@@ -200,13 +189,12 @@
         </button>
     </div>
 
-
     <section class="room-info-container">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
-                    <h2 class="room-title">Luxury Suite</h2>
-                    <p class="room-description">Our Luxury Suite offers a premium experience with top-notch amenities and breathtaking views. Enjoy the perfect balance of comfort and style.</p>
+                    <h2 class="room-title">Room 2</h2>
+                    <p class="room-description">Designed for comfort and convenience, Room 2 is ideal for friends, families, or travel companions looking for a spacious stay with two cozy beds. The well-arranged layout ensures ample space for relaxation, while the inviting ambiance makes it the perfect place to unwind after a day of exploring
                 </div>
             </div>
             
@@ -215,71 +203,70 @@
                     <ul class="room-details list-unstyled">
                         <li><strong>Bed:</strong> King Size</li>
                         <li><strong>Capacity:</strong> 2 Adults, 1 Child</li>
-                        <li><strong>View:</strong> Ocean View</li>
-                        <li><strong>Extras:</strong> Mini Bar, Smart TV, Free Breakfast</li>
+                        <li><strong>Extras:</strong> King Sized Bed</li>
                     </ul>
                 </div>
             </div>
     
             <div class="text-center mt-4">
-                <a href="CONTACT_RESERVATION.html" class="btn btn-primary book-now">Book Now</a>
+                <a href="CONTACT_RESERVATION.html" class="view-room">Book Now</a> 
             </div>
         </div>
     </section>
     <section class="other-rooms">
-        <h2>Other Rooms </h2>
-        <div class="rooms-container">
-            <div class="room-card">
-                <img src="/room1/room1pic1.jpg" alt="Room 1">
-                <h3>Room 1</h3>
-                <p>An enchanting and intimate space designed with your utmost comfort in mind.</p>
-                <a href="Room1.html" class="view-room">View Room</a>
-            </div>
+      <h2>Other Rooms </h2>
+      <div class="rooms-container">
+          <div class="room-card">
+              <img src="/room1/room1pic1.jpg" alt="Room 2">
+              <h3>Room 1</h3>
+              <p>Escape to the serene ambiance of Room 1, a haven designed for ultimate relaxation.</p>
+              <a href="Room1.html" class="view-room">View Room</a>
+          </div>
             <div class="room-card">
                 <img src="/room3/room3pic1.jpg" alt="Room 3">
                 <h3>Room 3</h3>
                 <p>The option caters to discerning travelers who require a spacious abode for meetings or...</p>
                 <a href="Room3.html" class="view-room">View Room</a>
             </div>
-            <div class="room-card">
-                <img src="/room4/room4pic2.jpeg" alt="Room 4">
-                <h3>Room 4</h3>
-                <p>Live, work, and play in our largest offering with 100 sqm of luxury and a panoramic view.</p>
-                <a href="Room4.html" class="view-room">View Room</a>
-            </div>
+          <div class="room-card">
+              <img src="/room4/room4pic2.jpeg" alt="Room 4">
+              <h3>Room 4</h3>
+              <p>Live, work, and play in our largest offering with 100 sqm of luxury and a panoramic view.</p>
+              <a href="Room4.html" class="view-room">View Room</a>
+          </div>
+      </div>
+  </section>
+  
+  <footer style="background-color: #000; color: #fff; padding: 30px; padding-top: 35px; padding-bottom: 5px;">
+    <div style="position: relative; top: -20px;">
+      <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; text-align: center;">
+        <div style="flex: 1; min-width: 250px;">
+          <img src="logo2.png" alt="MJJQ Logo" style="max-width: 120px;">
+          <p style="margin-top: 10px;">Comfort and warmth, just like home</p>
         </div>
-    </section>
-    <br>
-
-    <footer style="background-color: #000; color: #fff; padding: 30px; padding-top: 35px; padding-bottom: 5px;">
-        <div style="position: relative; top: -20px;">
-          <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; text-align: center;">
-            <div style="flex: 1; min-width: 250px;">
-              <img src="logo2.png" alt="MJJQ Logo" style="max-width: 120px;">
-              <p style="margin-top: 10px;">Comfort and warmth, just like home</p>
-            </div>
-            <div style="flex: 1; min-width: 250px;">
-              <h3 style="font-size: 18px; margin-bottom: 10px;"><b>LOCATION</b></h3>
-              <p>Barangay Militar, Fort Magsaysay, <br> Palayan City, Philippines</p>
-              <div>
-                <a href="mailto:mjjqtransient@gmail.com" style="margin-right: 11.5px;"><img src="email-icon.png" alt="Email" width="30" height="28"></a>
-                <a href="https://www.facebook.com/share/1BPRxd3VGk/" style="margin-right: 10px;"><img src="facebook-icon.png" alt="Facebook" width="24"></a>
-                <a href="https://maps.app.goo.gl/PQ18yqTUHaU5JnnA6"><img src="location-icon.png" alt="Google" width="24"></a>
-              </div>
-            </div>
-            <div style="flex: 1; min-width: 250px;">
-              <h3 style="font-size: 18px; margin-bottom: 10px;"><b>CONTACT US</b></h3>
-              <p><strong>Phone:</strong> +63 918 264-5515</p>
-              <p><strong>Email:</strong> mjjqtransient@gmail.com</p>
-              <a href="CONTACT_RESERVATION.html" style="display: inline-block; background-color: #a39688; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px;">BOOK ONLINE</a> 
-            </div>
+        <div style="flex: 1; min-width: 250px;">
+          <h3 style="font-size: 18px; margin-bottom: 10px;"><b>LOCATION</b></h3>
+          <p>Barangay Militar, Fort Magsaysay, <br> Palayan City, Philippines</p>
+          <div>
+            <a href="mailto:mjjqtransient@gmail.com" style="margin-right: 11.5px;"><img src="email-icon.png" alt="Email" width="30" height="28"></a>
+            <a href="https://www.facebook.com/share/1BPRxd3VGk/" style="margin-right: 10px;"><img src="facebook-icon.png" alt="Facebook" width="24"></a>
+            <a href="https://maps.app.goo.gl/PQ18yqTUHaU5JnnA6"><img src="location-icon.png" alt="Google" width="24"></a>
           </div>
         </div>
-        <div style="text-align: center; padding: 5px 0; font-size: 18px; background-color: #000; color: #fff; border-top: 1px solid #444; position: relative;">
-          <p style="margin: 12px 0;">© 2024 MJJQ Transient Room. All rights reserved.</p>
-          <p style="font-size: medium;">Nicole Scarlet G. Cloa, Fiona Hailey L. Maraña, Roelle Aira T. Milar, Jamela Mae S. Quiddam, Mico Angelo C. Tazarte</p>
+        <div style="flex: 1; min-width: 250px;">
+          <h3 style="font-size: 18px; margin-bottom: 10px;"><b>CONTACT US</b></h3>
+          <p><strong>Phone:</strong> +63 918 264-5515</p>
+          <p><strong>Email:</strong> mjjqtransient@gmail.com</p>
+          <a href="CONTACT_RESERVATION.html" style="display: inline-block; background-color: #a39688; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px;">BOOK ONLINE</a> 
         </div>
-    </footer>
-    <script src="MAIN_PAGE.js"></script> 
+      </div>
+    </div>
+    <div style="text-align: center; padding: 5px 0; font-size: 18px; background-color: #000; color: #fff; border-top: 1px solid #444; position: relative;">
+      <p style="margin: 12px 0;">© 2024 MJJQ Transient Room. All rights reserved.</p>
+      <p style="font-size: medium;">Nicole Scarlet G. Cloa, Fiona Hailey L. Maraña, Roelle Aira T. Milar, Jamela Mae S. Quiddam, Mico Angelo C. Tazarte</p>
+    </div>
+</footer>
+    
+      <script src="MAIN_PAGE.js"></script> 
 </body>
 </html>
