@@ -49,8 +49,8 @@ body {
 }
 
 #floorplan img {
-  max-width: 100%;
-  height: auto; 
+  max-width: 900px;
+  height: 500px; 
 }
 
 #floorplan {
