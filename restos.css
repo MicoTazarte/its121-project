@@ -64,8 +64,8 @@ body {
 }
 
 #floorplan img {
-    max-width: 50%;
-    height: auto; 
+    width: 1524px;
+    height: 1080px; 
 }
   
   /* Media Queries for Responsiveness */
