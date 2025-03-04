@@ -1,30 +1,22 @@
+/* General body styles */
 body {
-  text-align: center; 
-  margin-left: auto; /* Use auto margin for responsiveness */
-  margin-right: auto; /* Use auto margin for responsiveness */
+  text-align: center;
+  margin: 0 auto; /* Use auto margin for responsiveness */
 }
 
+/* Hero section styles */
 .hero {
-  height: 450px; 
+  height: 450px;
   background: url('no text.jpg') no-repeat center center/cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #fff;
-  text-align: left;
-  position: relative;
+  position: relative; /* Required for positioning child elements */
 }
 
-.location-container {
-  width: 80%;
-  max-width: 800px;
-  margin: 100px auto; /* Adjust top margin as needed */
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
-}
-
+/* Overlay for the hero section */
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -34,43 +26,78 @@ body {
   background: rgba(0, 0, 0, 0.5);
 }
 
-
+/* Content within the hero section */
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 1; /* Ensure content is above the overlay */
   max-width: 90%;
 }
 
+/* Heading styles within the hero content */
 .room {
   font-family: "Shrikhand", serif;
   color: white;
   font-size: 70px;
-  text-shadow: 4px 4px 10px rgb(0, 0, 0); /* Adds a shadow effect */
+  text-shadow: 4px 4px 10px rgb(0, 0, 0);
 }
 
+/* Container for location information */
+.location-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 100px auto; /* Adjust top margin as needed */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
 
 /* Media Queries for Responsiveness */
 
+/* Adjust styles for screens smaller than 1200px */
 @media (max-width: 1200px) {
   .hero {
-      height: 700px; /* Adjust for larger screens */
+      height: 700px; 
   }
 }
 
+/* Adjust styles for screens smaller than 992px */
 @media (max-width: 992px) {
   .hero {
-      height: 600px; /* Adjust for medium screens */
+      height: 600px; 
+  }
+  .location-container {
+      width: 90%; 
+      margin-top: 80px; /* Adjust as needed */
+  }
+  .room {
+      font-size: 60px; /* Adjust font size */
   }
 }
 
+/* Adjust styles for screens smaller than 768px */
 @media (max-width: 768px) {
   .hero {
-      height: 500px; /* Adjust for smaller screens */
+      height: 500px; 
+  }
+  .location-container {
+      width: 95%; 
+      margin-top: 60px; /* Adjust as needed */
+  }
+  .room {
+      font-size: 50px; /* Adjust font size */
   }
 }
 
+/* Adjust styles for screens smaller than 576px */
 @media (max-width: 576px) {
   .hero {
-      height: 400px; /* Adjust for mobile screens */
+      height: 400px; 
+  }
+  .location-container {
+      width: 100%; 
+      margin-top: 40px; /* Adjust as needed */
+  }
+  .room {
+      font-size: 40px; /* Adjust font size */
   }
 }
