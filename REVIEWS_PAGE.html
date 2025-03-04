@@ -504,7 +504,7 @@ function sortReviews(criteria) {
     let reviewColumns = Array.from(container.getElementsByClassName("col-md-4"));
 
     if (criteria === 'relevant') {
-        // Restore original order (including new reviews)
+        // Restore the order from originalOrder, ensuring new reviews are included
         container.innerHTML = "";
         originalOrder.forEach(column => container.appendChild(column));
         return;
@@ -557,8 +557,8 @@ document.getElementById('review-form').addEventListener('submit', function(event
     let container = document.getElementById('testimonials-container');
     container.appendChild(newReview);
 
-    // Update originalOrder to include new review
-    originalOrder.push(newReview);
+    // Update originalOrder dynamically to keep track of new reviews
+    originalOrder = Array.from(container.getElementsByClassName("col-md-4"));
 
     // Reset sorting to "Relevant" (original order) after new review is added
     sortReviews('relevant');
@@ -566,7 +566,6 @@ document.getElementById('review-form').addEventListener('submit', function(event
     // Clear form fields
     document.getElementById('review-form').reset();
 });
-
 </script>
     
 </body>
