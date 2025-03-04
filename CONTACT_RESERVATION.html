@@ -440,32 +440,60 @@
 
     <script>
         function updatePriceList() {
-            const roomSelection = document.getElementById("room-selection").value;
-            const priceOptions = document.getElementById("price-options");
+    const roomSelection = document.getElementById("room-selection").value;
+    const priceOptions = document.getElementById("price-options");
 
-            if (roomSelection === "aircon") {
-                priceOptions.innerHTML = `
-                    <p>Select Duration for Aircon Room:</p>
-                    <div class="price-option">
-                        <input type="radio" id="aircon-3hrs" name="duration" value="350_3" required>
-                        <label for="aircon-3hrs">350 - 3 HOURS</label>
-                    </div>
-                    <div class="price-option">
-                        <input type="radio" id="aircon-6hrs" name="duration" value="500_6">
-                        <label for="aircon-6hrs">500 - 6 HOURS</label>
-                    </div>
-                    <div class="price-option">
-                        <input type="radio" id="aircon-12hrs" name="duration" value="700_12">
-                        <label for="aircon-12hrs">700 - 12 HOURS</label>
-                    </div>
-                    <div class="price-option">
-                        <input type="radio" id="aircon-24hrs" name="duration" value="1000_24">
-                        <label for="aircon-24hrs">1000 - 24 HOURS</label>
-                    </div>
-                    <div class="price-option">
-                        <input type="radio" id="aircon-overnight" name="duration" value="650_overnight">
-                        <label for="aircon-overnight">OVERNIGHT
-
+    if (roomSelection === "aircon") {
+        priceOptions.innerHTML = `
+            <p>Select Duration for Aircon Room:</p>
+            <div class="price-option">
+                <input type="radio" id="aircon-3hrs" name="duration" value="350_3" required>
+                <label for="aircon-3hrs">350 - 3 HOURS</label>
+            </div>
+            <div class="price-option">
+                <input type="radio" id="aircon-6hrs" name="duration" value="500_6">
+                <label for="aircon-6hrs">500 - 6 HOURS</label>
+            </div>
+            <div class="price-option">
+                <input type="radio" id="aircon-12hrs" name="duration" value="700_12">
+                <label for="aircon-12hrs">700 - 12 HOURS</label>
+            </div>
+            <div class="price-option">
+                <input type="radio" id="aircon-24hrs" name="duration" value="1000_24">
+                <label for="aircon-24hrs">1000 - 24 HOURS</label>
+            </div>
+            <div class="price-option">
+                <input type="radio" id="aircon-overnight" name="duration" value="650_overnight">
+                <label for="aircon-overnight">OVERNIGHT (8PM - 6AM) - 650</label>
+            </div>
+        `;
+        priceOptions.classList.remove("hidden");
+    } else if (roomSelection === "ordinary") {
+        priceOptions.innerHTML = `
+            <p>Select Duration for Ordinary Room:</p>
+            <div class="price-option">
+                <input type="radio" id="ordinary-6hrs" name="duration" value="400_6" required>
+                <label for="ordinary-6hrs">400 - 6 HOURS</label>
+            </div>
+            <div class="price-option">
+                <input type="radio" id="ordinary-12hrs" name="duration" value="500_12">
+                <label for="ordinary-12hrs">500 - 12 HOURS</label>
+            </div>
+            <div class="price-option">
+                <input type="radio" id="ordinary-24hrs" name="duration" value="750_24">
+                <label for="ordinary-24hrs">750 - 24 HOURS</label>
+            </div>
+            <div class="price-option">
+                <input type="radio" id="ordinary-overnight" name="duration" value="450_overnight">
+                <label for="ordinary-overnight">OVERNIGHT (8PM - 6AM) - 450</label>
+            </div>
+        `;
+        priceOptions.classList.remove("hidden");
+    } else {
+        priceOptions.innerHTML = "";
+        priceOptions.classList.add("hidden");
+    }
+}
 
     
 
