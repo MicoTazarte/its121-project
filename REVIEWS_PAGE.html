@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MJJQ - Reviews</title>
     <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
-    <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+    <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script><script src="navbar.js"></script>
     <link rel="stylesheet" href="navbar.css">
 
 <style>
@@ -51,7 +51,7 @@
 
 .testimonial .date {
     font-size: 14px;
-    color: white;
+    color: #000;
     margin-bottom: 5px;
 }
     
@@ -491,73 +491,84 @@ footer a[style*="background-color: #a39688"]:hover {
     </div>
 </footer>
 
-    <script src="navbar.js">
+
+    <script>
     let originalOrder = [];
 
-    window.onload = function() {
-        let container = document.getElementById("testimonials-container");
-        originalOrder = Array.from(container.getElementsByClassName("col-md-4"));
-    };
+window.onload = function() {
+    let container = document.getElementById("testimonials-container");
+    originalOrder = Array.from(container.getElementsByClassName("col-md-4"));
+};
 
-    function sortReviews(criteria) {
-        let container = document.getElementById("testimonials-container");
-        let reviewColumns = Array.from(container.getElementsByClassName("col-md-4"));
+function sortReviews(criteria) {
+    let container = document.getElementById("testimonials-container");
+    let reviewColumns = Array.from(container.getElementsByClassName("col-md-4"));
 
-        if (criteria === 'relevant') {
-            // Restore original order
-            container.innerHTML = "";
-            originalOrder.forEach(column => container.appendChild(column));
-            return;
-        }
-
-        reviewColumns.sort((a, b) => {
-            let aValue, bValue;
-
-            if (criteria === 'newest') {
-                aValue = new Date(a.querySelector('.testimonial').getAttribute("data-date"));
-                bValue = new Date(b.querySelector('.testimonial').getAttribute("data-date"));
-                return bValue - aValue;
-            } else if (criteria === 'highest') {
-                aValue = parseInt(a.querySelector('.testimonial').getAttribute("data-rating"));
-                bValue = parseInt(b.querySelector('.testimonial').getAttribute("data-rating"));
-                return bValue - aValue;
-            } else if (criteria === 'lowest') {
-                aValue = parseInt(a.querySelector('.testimonial').getAttribute("data-rating"));
-                bValue = parseInt(b.querySelector('.testimonial').getAttribute("data-rating"));
-                return aValue - bValue;
-            }
-        });
-
-        reviewColumns.forEach(column => container.appendChild(column));
+    if (criteria === 'relevant') {
+        // Restore original order (including new reviews)
+        container.innerHTML = "";
+        originalOrder.forEach(column => container.appendChild(column));
+        return;
     }
 
-    document.getElementById('review-form').addEventListener('submit', function(event) {
-            event.preventDefault();
+    reviewColumns.sort((a, b) => {
+        let aValue, bValue;
 
-            // Get input values
-            let name = document.getElementById('name').value;
-            let rating = document.getElementById('rating').value;
-            let review = document.getElementById('review').value;
+        if (criteria === 'newest') {
+            aValue = new Date(a.querySelector('.testimonial').getAttribute("data-date"));
+            bValue = new Date(b.querySelector('.testimonial').getAttribute("data-date"));
+            return bValue - aValue;
+        } else if (criteria === 'highest') {
+            aValue = parseInt(a.querySelector('.testimonial').getAttribute("data-rating"));
+            bValue = parseInt(b.querySelector('.testimonial').getAttribute("data-rating"));
+            return bValue - aValue;
+        } else if (criteria === 'lowest') {
+            aValue = parseInt(a.querySelector('.testimonial').getAttribute("data-rating"));
+            bValue = parseInt(b.querySelector('.testimonial').getAttribute("data-rating"));
+            return aValue - bValue;
+        }
+    });
 
-            // Create new review element
-            let newReview = document.createElement('div');
-            newReview.classList.add('col-md-4');
-            newReview.innerHTML = `
-                <div class="testimonial">
-                    <img src="images/default-user.jpg" alt="${name}">
-                    <h4>${name}</h4>
-                    <p>${rating}</p>
-                    <p>"${review}"</p>
-                </div>
-            `;
+    container.innerHTML = "";
+    reviewColumns.forEach(column => container.appendChild(column));
+}
 
-            // Append new review
-            document.getElementById('testimonials-container').appendChild(newReview);
+document.getElementById('review-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-            // Clear form fields
-            document.getElementById('review-form').reset();
-        });
-    </script>
+    // Get input values
+    let name = document.getElementById('name').value;
+    let rating = document.getElementById('rating').value;
+    let review = document.getElementById('review').value;
+    let currentDate = new Date().toISOString(); // Store current timestamp
+
+    // Create new review element
+    let newReview = document.createElement('div');
+    newReview.classList.add('col-md-4');
+    newReview.innerHTML = `
+        <div class="testimonial" data-date="${currentDate}" data-rating="${rating}">
+            <img src="images/default-user.jpg" alt="${name}">
+            <h4>${name}</h4>
+            <p>${rating}</p>
+            <p>"${review}"</p>
+        </div>
+    `;
+
+    // Append new review
+    let container = document.getElementById('testimonials-container');
+    container.appendChild(newReview);
+
+    // Update originalOrder to include new review
+    originalOrder.push(newReview);
+
+    // Reset sorting to "Relevant" (original order) after new review is added
+    sortReviews('relevant');
+
+    // Clear form fields
+    document.getElementById('review-form').reset();
+});
+
+</script>
     
 </body>
 </html> 
