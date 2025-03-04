@@ -1,91 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MJJQ Transient Room</title>
-  <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
-  <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
-  <link rel="stylesheet" href="navbar.css"> 
-  <link rel="stylesheet" href="about.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJJQ - About Us</title>
+    <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"> 
+    <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="location.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="top-bar">
-    <div class="contact-info">
-        <img src="phone-icon.png" alt="Phone Icon" class="icon"> <a href="tel:+63277557888">+63 905 437-3231</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img src="email-icon.png" alt="Email Icon" class="icon"> <a href="mailto:mjjq.com">mjjqtransient@gmail.com</a>
-    </div>
-</div>
-
-  <div class="navbar-wrapper">
-    <nav class="navbar" id="navbar">
-      <div class="nav-container">
-        <div class="logo">
-          <a href="MAIN_PAGE.html"><img src="logo.png" alt="MJJQ Logo"></a>
+    <div class="top-bar">
+        <div class="contact-info">
+            <img src="phone-icon.png" alt="Phone Icon" class="icon"> <a href="tel:+63277557888">+63 905 437-3231</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="email-icon.png" alt="Email Icon" class="icon"> <a href="mailto:mjjq.com">mjjqtransient@gmail.com</a>
         </div>
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-        <ul class="nav-links">
-          <li><a href="aboutUs.html">About Us</a></li>
-          <li class="dropdown-parent">
-            <a href="ROOMS_RATES_PAGE.html" class="dropdown-toggle" onclick="toggleDropdown(this)">
-              Rooms & Rates <span class="arrow"></span>
-            </a>
-            <div class="dropdown">
-              <a href="Room1.html">Room 1</a>
-              <a href="Room2.html">Room 2</a>
-              <a href="Room3.html">Room 3</a>
-              <a href="Room4.html">Room 4</a>
+    </div>
+ 
+    <div class="navbar-wrapper">
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="MAIN_PAGE.html"><img src="logo.png" alt="MJJQ Logo"></a>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                <ul class="nav-links">
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li class="dropdown-parent">
+                        <a href="ROOMS_RATES_PAGE.html" class="dropdown-toggle" onclick="toggleDropdown(this)">
+                            Rooms & Rates <span class="arrow"></span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="Room1.html">Room 1</a>
+                            <a href="Room2.html">Room 2</a>
+                            <a href="Room3.html">Room 3</a>
+                            <a href="Room4.html">Room 4</a>
+                        </div>
+                    </li>
+                    <li><a href="LOCATION_PAGE.html">Location</a></li>
+                    <li><a href="CONTACT_RESERVATION.html">Contact Us</a></li>
+                    <li><a href="REVIEWS_PAGE.html">Reviews</a></li>
+                    <li><a href="BLOG_TRAVEL_TIPS.html">Blog</a></li>
+                    <li><a href="DISCOUNTS_PAGE.html">Offers</a></li>
+                    <li><a href="SUPPORT_PAGE.html">FAQs</a></li>
+                    <li><a href="CONTACT_RESERVATION.html" class="book-now">BOOK NOW</a></li>
+                </ul>
             </div>
-          </li>
-          <li><a href="LOCATION_PAGE.html">Location</a></li>
-          <li><a href="CONTACT_RESERVATION.html">Contact Us</a></li>
-          <li><a href="REVIEWS_PAGE.html">Reviews</a></li>
-          <li><a href="BLOG_TRAVEL_TIPS.html">Blog</a></li>
-          <li><a href="DISCOUNTS_PAGE.html">Offers</a></li>
-          <li><a href="SUPPORT_PAGE.html">FAQs</a></li>
-          <li><a href="CONTACT_RESERVATION.html" class="book-now">BOOK NOW</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-
-  <div class="content">
-    <div class="hero">
-      <div class="hero-overlay"></div>
-      </div>
-    </div>
-  </div>
-
-  <footer style="background-color: #000; color: #fff; padding: 30px; padding-top: 35px; padding-bottom: 5px;">
-    <div style="position: relative; top: -20px;">
-      <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; text-align: center;">
-        <div style="flex: 1; min-width: 250px;">
-          <img src="logo2.png" alt="MJJQ Logo" style="max-width: 120px;">
-          <p style="margin-top: 10px;">Comfort and warmth, just like home</p>
+        </nav>
+        <div class="location-section">
+            <div class="content">
+                <div class="hero">
+                  <div class="hero-overlay"></div>
+                  <h1 class="room">About Us</h1>
+                </div>
+            </div>
+            <div class="location-container">
+                <div class="location-text">
+                    <p>
+                        lorem ipsum
+                    </p>
+                    <a href="https://maps.app.goo.gl/Hgs3pqFhzBiHevbe8" target="_blank" class="btn-directions">GET DIRECTIONS</a>
+                </div>
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d265332.06914359564!2d121.02127083314147!3d15.463316224577834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33972fdbef8258bd%3A0x738c4bf33c1f9dea!2sMJJQ%20Transient%20Room!5e1!3m2!1sen!2sph!4v1740841163648!5m2!1sen!2sph" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
         </div>
-        <div style="flex: 1; min-width: 250px;">
-          <h3 style="font-size: 18px; margin-bottom: 10px;"><b>LOCATION</b></h3>
-          <p>Barangay Militar, Fort Magsaysay, <br> Palayan City, Philippines</p>
-          <div>
-            <a href="mailto:mjjqtransient@gmail.com" style="margin-right: 11.5px;"><img src="email-icon.png" alt="Email" width="30" height="28"></a>
-            <a href="https://www.facebook.com/share/1BPRxd3VGk/" style="margin-right: 10px;"><img src="facebook-icon.png" alt="Facebook" width="24"></a>
-            <a href="https://maps.app.goo.gl/PQ18yqTUHaU5JnnA6"><img src="location-icon.png" alt="Google" width="24"></a>
+    </div>
+    <footer style="background-color: #000; color: #fff; padding: 30px; padding-top: 35px; padding-bottom: 5px;">
+        <div style="position: relative; top: -20px;">
+          <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; text-align: center;">
+            <div style="flex: 1; min-width: 250px;">
+              <img src="logo2.png" alt="MJJQ Logo" style="max-width: 120px;">
+              <p style="margin-top: 10px;">Comfort and warmth, just like home</p>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+              <h3 style="font-size: 18px; margin-bottom: 10px;"><b>LOCATION</b></h3>
+              <p>Barangay Militar, Fort Magsaysay, <br> Palayan City, Philippines</p>
+              <div>
+                <a href="mailto:mjjqtransient@gmail.com" style="margin-right: 11.5px;"><img src="email-icon.png" alt="Email" width="30" height="28"></a>
+                <a href="https://www.facebook.com/share/1BPRxd3VGk/" style="margin-right: 10px;"><img src="facebook-icon.png" alt="Facebook" width="24"></a>
+                <a href="https://maps.app.goo.gl/PQ18yqTUHaU5JnnA6"><img src="location-icon.png" alt="Google" width="24"></a>
+              </div>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+              <h3 style="font-size: 18px; margin-bottom: 10px;"><b>CONTACT US</b></h3>
+              <p><strong>Phone:</strong> +63 918 264-5515</p>
+              <p><strong>Email:</strong> mjjqtransient@gmail.com</p>
+              <a href="CONTACT_RESERVATION.html" style="display: inline-block; background-color: #a39688; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px;">BOOK ONLINE</a> 
+            </div>
           </div>
         </div>
-        <div style="flex: 1; min-width: 250px;">
-          <h3 style="font-size: 18px; margin-bottom: 10px;"><b>CONTACT US</b></h3>
-          <p><strong>Phone:</strong> +63 918 264-5515</p>
-          <p><strong>Email:</strong> mjjqtransient@gmail.com</p>
-          <a href="CONTACT_RESERVATION.html" style="display: inline-block; background-color: #a39688; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px;">BOOK ONLINE</a> 
+        <div style="text-align: center; padding: 5px 0; font-size: 18px; background-color: #000; color: #fff; border-top: 1px solid #444; position: relative;">
+          <p style="margin: 12px 0;">© 2024 MJJQ Transient Room. All rights reserved.</p>
+          <p style="font-size: medium;">Nicole Scarlet G. Cloa, Fiona Hailey L. Maraña, Roelle Aira T. Milar, Jamela Mae S. Quiddam, Mico Angelo C. Tazarte</p>
         </div>
-      </div>
-    </div>
-    <div style="text-align: center; padding: 5px 0; font-size: 18px; background-color: #000; color: #fff; border-top: 1px solid #444; position: relative;">
-      <p style="margin: 12px 0;">© 2024 MJJQ Transient Room. All rights reserved.</p>
-      <p style="font-size: medium;">Nicole Scarlet G. Cloa, Fiona Hailey L. Maraña, Roelle Aira T. Milar, Jamela Mae S. Quiddam, Mico Angelo C. Tazarte</p>
-    </div>
-</footer>
-
-  <script src="MAIN_PAGE.js"></script> 
+    </footer>
+    <script src="MAIN_PAGE.js"></script> 
 </body>
 </html>
